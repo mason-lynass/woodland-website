@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+.blue {
+  background-color: rgb(2, 167, 158);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  /* transform: translate(-50%, 0); */
+  width: calc(140px * 1.88);
+  height: 140px;
+  background: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#nav-container {
+  position: sticky;
+  top: 0;
+  padding-bottom: 70px; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#nav-flex {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: space-between;
   align-items: center;
+  padding: 25px 50px;
+}
+
+#nav-links {
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+}
+
+#nav-links a, #nav-flex a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main h2 {
+  text-align: center;
+  margin: 40px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#mailing-list {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  max-width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+}
+
+#mailing-list-copy h2 {
+  margin: 0px auto;
+}
+
+#mailing-list-copy p {
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+#mailing-list-address {
+  height: 40px;
+  width: 200px;
+  margin: auto 20px;
+  font-size: 16px;
+}
+
+#mailing-list-submit {
+  height: 50px;
+  font-size: 20px;
+  background-color: rgb(2, 167, 158);
+  color: white;
+  border: 0px;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+
+#footer {
+  text-align: center;
+  padding: 30px;
+  margin: 0px auto;
+}
+
+#footer, #footer a {
+  color: white;
+}
+
+#footer-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 10px 50px;
+}
+
+#IGGallery-all-pics {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2vw;
+  gap: 2vw;
+}
+
+.IGGallery-pic {
+  width: 400px;
+  height: 400px;
+  margin: 5px;
+  object-fit: cover;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 600px) {
+  main h2 {
+    text-align: center;
+    margin: 0 20px 40px 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  #nav-flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  #nav-container {
+    padding-bottom: 58px;
+  }
+
+  #logo { 
+    width: calc(80px * 1.88);
+    height: 80px;
+  }
+
+  #nav-links {
+    gap: 10px;
+  }
+
+  #to-home h1 {
+    font-size: calc((1.7 - 1) * 1.2vw + 1rem);
+    margin: 0;
+  }
+
+  #nav-flex a {
+    font-size: 14px;
+  }
+
+  #IGGallery-all-pics {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+  }
+
+  .IGGallery-pic {
+    width: 40vw;
+    height: 40vw;
+    object-fit: cover;
+    border: 1px solid black;
+  }
+
+  #mailing-list-copy p {
+    font-size: calc((1.7 - 1) * 1.2vw + .5rem);
+    margin-bottom: 10px;
+  }
+
+  #mailing-list-submit, #mailing-list-address {
+    height: 40px;
+    font-size: 1rem;
+    margin: 5px 10px;
+  }
+
+  #mailing-list-address {
+    height: 30px;
+    width: 60%;
+    min-width: 150px;
+    font-size: .8rem;
+  }
+
+  #mailing-list {
+    margin: 20px 3%;
+  }
+
+  #footer {
+    padding: 1px;
+  }
+
+  #footer-flex {
+    display: block;
+    margin-top: 20px;
+  }
+
+  #history h2 {
+    font-size: 24px;
+  }
+
+  main {
+    margin-top: -20px;
   }
 }

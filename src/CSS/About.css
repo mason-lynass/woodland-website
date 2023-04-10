@@ -1,0 +1,135 @@
+#about-main a {
+  color: rgb(2, 167, 158);
+}
+
+#woodland-about {
+  margin: 20px 4vw;
+}
+
+#woodland-about h2 {
+  margin: auto 10vw;
+}
+
+#tenants-about {
+  background-image: linear-gradient(to bottom, rgba(240, 253, 240, 1), rgb(255, 255, 255, 0), rgb(255, 255, 255, 0), rgb(255, 255, 255, 0), rgba(240, 253, 240, 1));
+  background-color: white;
+  margin: 100px 0;
+}
+
+#tenants-about h1, #woodland-about, .one-tenant, #about-bottom {
+  text-align: center;
+}
+
+#tenants-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: top;
+  margin: 20px 5vw;
+  gap: 20px;
+}
+
+.one-tenant {
+  width: 400px;
+}
+
+.one-tenant p {
+  text-align: left;
+  font-size: calc((1.5 - 1) * 1.2vw + .5rem);
+}
+
+.one-tenant img {
+  width: 400px;
+}
+
+#about-bottom {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 50px;
+}
+
+#history {
+  margin: 5vw;
+}
+
+#history-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 5%;
+  align-items: top;
+}
+
+#history-copy {
+  width: 45%;
+  min-width: 400px;
+}
+
+#history-copy p {
+  font-size: calc((1.7 - 1) * 1.2vw + .6rem);
+}
+
+#woodland-1932 {
+  width: 50%;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 987px) {
+  #history-copy {
+    width: 90%;
+    min-width: 0;
+    max-width: 750px;
+  }
+
+  #woodland-1932 {
+    width: 90%;
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .one-tenant p, #woodland-about h2 {
+    font-size: calc((2 - 1) * 1.2vw + .7rem);
+  }
+
+  .one-tenant {
+    width: 90%;
+  }
+  
+  .one-tenant img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+
+  #woodland-about h2 {
+    margin: 20px auto;
+  }
+
+  #woodland-about {
+    margin: 0px 4vw;
+  }
+
+  #tenants-about {
+    margin: 60px 0;
+  }
+
+  #about-bottom h4 {
+    padding: 10px;
+  }
+
+  #about-bottom {
+    padding: 0 5%;
+    margin: 20px auto;
+  }
+
+  #tenants-flex {
+    margin: 0 4vw;
+  }
+
+  
+
+  
+}

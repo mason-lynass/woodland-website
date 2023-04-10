@@ -1,0 +1,64 @@
+#homepage-top {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 2vw;
+  gap: 5vw;
+}
+
+#next-event {
+    text-align: center;
+    margin: 0;
+    width: fit-content;
+    min-width: 35vw;
+    padding: 0 50px 20px 50px;
+    border: 1px solid black;
+    box-shadow: 1px 3px 5px 0px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#peg-at-woodland {
+  width: 40vw;
+  max-width: 600px;
+  min-width: 350px;
+}
+
+#big-band-links a {
+  display: block;
+}
+
+#band-links {
+  margin: 50px;
+}
+
+.band-link {
+  margin: 20px;
+  color: black;
+  font-size: calc((2 - 1) * 1.2vw + 1rem);
+}
+
+.band-link:hover {
+  color: rgb(2, 167, 158);
+}
+
+@media screen and (max-width: 808px) {
+  #peg-at-woodland {
+    width: 80vw;
+    min-width: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+    #next-event {
+      margin: 20px auto;
+      padding: 5vw;
+      min-width: 70%;
+      max-width: 90%;
+    }
+
+    #next-event h2 {
+      margin: 20px;
+    }
+}

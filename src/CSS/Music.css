@@ -1,0 +1,101 @@
+#music-main {
+    margin: 4vw 0;
+}
+
+#all-of-the-bands {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    margin: 30px 2%;
+}
+
+#all-of-the-bands a {
+    padding: 10px;
+    width: 16vw;
+    margin: 2vw auto;
+    align-self: center;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 1px;
+}
+
+#all-of-the-bands a:hover{
+    background-color: white;
+    border-radius: 10px;
+}
+
+#music-top {
+    text-align: center;
+}
+
+#music-top h1 {
+    margin: auto;
+}
+
+#music-body {
+    width: 100%;
+    font-size: calc((2 - 1) * 1.2vw + .5rem);
+    background-image: linear-gradient(to bottom, rgba(240, 253, 240, 1), rgb(255, 255, 255, 0), rgb(255, 255, 255, 0), rgb(255, 255, 255, 0), rgba(240, 253, 240, 1));
+    margin: 0px auto;
+    padding: 50px 0;
+    background-color: white;
+}
+
+#music-search {
+    width: fit-content;
+    margin: 40px auto;
+}
+
+#music-search input {
+    width: 300px;
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 1px rgb(2, 167, 158);
+}
+
+.music-band h4 {
+    margin: 5px;
+    font-size: calc((1.7 - 1) * 1.2vw + .5rem);
+}
+
+@media screen and (max-width: 900px) {
+    #all-of-the-bands {
+        grid-template-columns: 32% 32% 32%;
+        gap: 20px 2%;
+        margin: auto 3%;
+    }
+
+    #all-of-the-bands a {
+        width: 25vw;
+    }
+
+    .music-band h4 {
+        margin: 5px;
+        font-size: calc((2.5 - 1) * 1.2vw + .5rem);
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    #all-of-the-bands {
+        grid-template-columns: 49% 49%;
+        gap: 0px 2%;
+        margin: auto 3%;
+    }
+
+    #all-of-the-bands a {
+        width: 30vw;
+    }
+
+    #music-body {
+        padding: 10vw;
+        width: 80vw;
+    }
+
+    #music-search {
+        margin-top: 0;
+    }
+}

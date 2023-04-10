@@ -1,0 +1,58 @@
+import EventsList from "./EventsList"
+import MailingList from "./MailingList"
+import "../CSS/Events.css"
+
+import { useState } from "react"
+
+function Events({ shows, bands, sanityLoaded, currentDate, sortedShows, futureShows, pastShows }) {
+
+    const [calView, setCalView] = useState('future')
+
+    function handleCalView() {
+        if (calView === 'future') setCalView('past')
+        if (calView === 'past') setCalView('future')
+    }
+
+    return (
+        (sanityLoaded === false) ?
+            <h2 id='events-loading'>loading...</h2>
+            :
+            <main id='events-main'>
+                <div id='events-top'>
+                    <p id='filler'></p>
+                    <h1 id='events-title'>Events at Woodland</h1>
+                    <button id='cal-view-button' onClick={handleCalView}>
+                        {calView === 'future' ? 'past events' : 'future events'}
+                    </button>
+                </div>
+
+                <section id='all-events'>
+                    {calView === 'future' ?
+                        <>
+                            <div id='future-events'>
+                                <h2>Coming Soon:</h2>
+                                <div id='events-list'>
+                                    <EventsList shows={futureShows} bands={bands} />
+
+                                </div>
+
+                            </div>
+                            <MailingList />
+                        </>
+                        :
+                        <div id='past-events'>
+                            <h3>past events:</h3>
+                            <div id='events-list'>
+                                <EventsList shows={pastShows} bands={bands} />
+                            </div>
+
+                        </div>
+
+                    }
+
+                </section>
+            </main>
+    )
+}
+
+export default Events
