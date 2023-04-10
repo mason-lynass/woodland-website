@@ -5,6 +5,7 @@ import Lucas from "../Images/SocialIcon.png"
 import Tom from "../Images/Eykemans.jpg"
 import OldWoodland from "../Images/Woodland-Theater-1932.jpg"
 import MailingList from './MailingList';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 function About() {
   return (
@@ -54,7 +55,15 @@ function About() {
       </div>
       <div id='about-bottom'>
         <h4>Our studios are currently full, but if you would like to be notified when a space is available, please email Woodland Theater to be added to the waiting list.</h4>
-        <MailingList />
+        <MailchimpSubscribe 
+          url={process.env.REACT_APP_MAILCHIMP_URL}
+          render={({ subscribe, status, message }) => (
+              <MailingList 
+              status={status}
+              message={message}
+              onSubmitted={formData => subscribe(formData)} />
+          )}
+        />
       </div>
       <section id='history'>
         <h2>History</h2>

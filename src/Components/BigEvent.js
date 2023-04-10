@@ -41,11 +41,10 @@ function BigEvent({ show, bands, sanityLoaded }) {
                 <h3>{show.description}</h3>
             )
         }
-
         else return (
             bandsArray.map((band) => {
                 return (
-                    <a key={band[0].description} className="band-link" href={band[0].description} rel="noopener noreferrer">{band[0].name}</a>
+                    <a key={band[0].name} className="band-link" href={band[0].description} rel="noopener noreferrer">{band[0].name}</a>
                 )
             })
         )
@@ -63,14 +62,6 @@ function BigEvent({ show, bands, sanityLoaded }) {
                 <h2>loading...</h2>
             </div>
     )
-
-    // return (
-    //     <div>
-    //         <h2>{show.tags}</h2>
-    //         <h3>{show.date}</h3>
-    //         <h4>{show.categories}</h4>
-    //     </div>
-    // )
 }
 
 export default BigEvent

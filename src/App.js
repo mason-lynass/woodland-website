@@ -12,20 +12,18 @@ import { Route, Routes } from "react-router-dom"
 
 function App() {
 
-  let PROJECT_ID = ENV['REACT_APP_SANITY_PROJECT_ID'];
+  let PROJECT_ID = process.env.REACT_APP_SANITY_PROJECT_ID;
   let DATASET = "production";
   let showQUERY = encodeURIComponent('*[_type == "show"]');
   let showURL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${showQUERY}`;
   let bandQUERY = encodeURIComponent('*[_type == "band"]');
   let bandURL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${bandQUERY}`;
-  let beholdURL = `https://feeds.behold.so/QDtZ4IXizXJYffMmIJfR`
+  let beholdURL = process.env.REACT_APP_BEHOLD_URL
 
   const [sanityLoaded, setSanityLoaded] = useState(false)
   const [shows, setShows] = useState([])
   const [bands, setBands] = useState([])
   const [behold, setBehold] = useState({})
-
-  console.log('this')
 
   useEffect(() => {
     fetch(beholdURL).then((res) => {

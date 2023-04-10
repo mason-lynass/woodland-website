@@ -2,6 +2,7 @@ import EventsList from "./EventsList"
 import MailingList from "./MailingList"
 import "../CSS/Events.css"
 
+import MailchimpSubscribe from "react-mailchimp-subscribe"
 import { useState } from "react"
 
 function Events({ shows, bands, sanityLoaded, currentDate, sortedShows, futureShows, pastShows }) {
@@ -37,7 +38,15 @@ function Events({ shows, bands, sanityLoaded, currentDate, sortedShows, futureSh
                                 </div>
 
                             </div>
-                            <MailingList />
+                            <MailchimpSubscribe
+                                url={process.env.REACT_APP_MAILCHIMP_URL}
+                                render={({ subscribe, status, message }) => (
+                                    <MailingList
+                                        status={status}
+                                        message={message}
+                                        onSubmitted={formData => subscribe(formData)} />
+                                )}
+                            />
                         </>
                         :
                         <div id='past-events'>

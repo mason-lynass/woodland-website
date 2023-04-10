@@ -9,27 +9,27 @@ function IGGallery({ behold, sanityLoaded }) {
                         case "IMAGE":
                             return (
                                 <a href={item.permalink} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" alt='' key={item.mediaUrl} src={item.mediaUrl}></img>
+                                    <img className="IGGallery-pic" alt='' key={item.id} src={item.mediaUrl}></img>
                                 </a>
 
                             )
                         case 'VIDEO':
                             return (
                                 <a href={item.permalink} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" alt='' key={item.thumbnailUrl} src={item.thumbnailUrl}></img>
+                                    <img className="IGGallery-pic" alt='' key={item.id} src={item.thumbnailUrl}></img>
                                 </a>
 
                             )
                         case 'CAROUSEL_ALBUM':
                             return (
                                 <a href={item.permalink} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" alt='' key={item.mediaUrl} src={item.mediaUrl}></img>
+                                    <img className="IGGallery-pic" alt='' key={item.id} src={item.mediaUrl}></img>
                                 </a>
                             )
                         default:
                             return (
                                 <a href={item.permalink} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" alt='' key={item.mediaUrl} src={item.mediaUrl}></img>
+                                    <img className="IGGallery-pic" alt='' key={item.id} src={item.mediaUrl}></img>
                                 </a>
 
                             )

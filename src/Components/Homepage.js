@@ -5,8 +5,7 @@ import BigEvent from "./BigEvent";
 import MailingList from "./MailingList";
 import IGGallery from "./IGGallery";
 
-
-
+import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 function Homepage({ shows, bands, currentDate, sortedShows, futureShows, sanityLoaded, behold }) {
 
@@ -17,7 +16,7 @@ function Homepage({ shows, bands, currentDate, sortedShows, futureShows, sanityL
         artists in Seattle.
       </h2>
       <section id='homepage-top'>
-        <img id='peg-at-woodland' src={Peg} alt='Peg performing at the Woodland Theater'/>
+        <img id='peg-at-woodland' src={Peg} alt='Peg performing at the Woodland Theater' />
         <div id="next-event">
           <h2>Our next event:</h2>
           <BigEvent show={futureShows[0]} bands={bands} sanityLoaded={sanityLoaded} />
@@ -25,7 +24,15 @@ function Homepage({ shows, bands, currentDate, sortedShows, futureShows, sanityL
       </section>
 
       <IGGallery behold={behold} sanityLoaded={sanityLoaded} />
-      <MailingList />
+      <MailchimpSubscribe
+        url={process.env.REACT_APP_MAILCHIMP_URL}
+        render={({ subscribe, status, message }) => (
+          <MailingList
+            status={status}
+            message={message}
+            onSubmitted={formData => subscribe(formData)} />
+        )}
+      />
     </main>
   );
 }

@@ -83,6 +83,11 @@ main h2 {
   border-radius: 20px;
 }
 
+#mailing-list-errors div {
+  margin: 20px;
+  font-size: 12px;
+}
+
 #footer {
   text-align: center;
   padding: 30px;
