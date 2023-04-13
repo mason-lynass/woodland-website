@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/woodland-website/static/css/main.ba86c126.css",
-    "main.js": "/woodland-website/static/js/main.4b47952a.js",
+    "main.css": "/woodland-website/static/css/main.fb35d099.css",
+    "main.js": "/woodland-website/static/js/main.087917d4.js",
     "static/js/787.78bfc86e.chunk.js": "/woodland-website/static/js/787.78bfc86e.chunk.js",
-    "static/media/peg-at-woodland.jpg": "/woodland-website/static/media/peg-at-woodland.e5af90e955d8c0d25178.jpg",
-    "static/media/SocialIcon.png": "/woodland-website/static/media/SocialIcon.5d33132529eab2ea1719.png",
-    "static/media/Woodland-Theater-1932.jpg": "/woodland-website/static/media/Woodland-Theater-1932.88c14382753f5ea6af10.jpg",
-    "static/media/Eykemans.jpg": "/woodland-website/static/media/Eykemans.a69fed4e871a65f00a90.jpg",
-    "static/media/old-woodland-logo.png": "/woodland-website/static/media/old-woodland-logo.61fda44426f7e3861f19.png",
-    "static/media/mason-woodland.jpg": "/woodland-website/static/media/mason-woodland.de3a1d90d147385ae3c2.jpg",
+    "static/media/peg-at-woodland.webp": "/woodland-website/static/media/peg-at-woodland.75597ff78cce3de2dfc5.webp",
+    "static/media/Woodland-Theater-1932.webp": "/woodland-website/static/media/Woodland-Theater-1932.032737c66e5ec95d2ce3.webp",
+    "static/media/SocialIcon.webp": "/woodland-website/static/media/SocialIcon.31a7d03865443938efcb.webp",
+    "static/media/Eykemans.webp": "/woodland-website/static/media/Eykemans.ac57eea5aa72f3755232.webp",
+    "static/media/mason-woodland.webp": "/woodland-website/static/media/mason-woodland.9b74f2fc29c1b5dfcaa1.webp",
+    "static/media/old-woodland-logo.webp": "/woodland-website/static/media/old-woodland-logo.d0a7781528d276ad9767.webp",
     "index.html": "/woodland-website/index.html",
-    "main.ba86c126.css.map": "/woodland-website/static/css/main.ba86c126.css.map",
-    "main.4b47952a.js.map": "/woodland-website/static/js/main.4b47952a.js.map",
+    "main.fb35d099.css.map": "/woodland-website/static/css/main.fb35d099.css.map",
+    "main.087917d4.js.map": "/woodland-website/static/js/main.087917d4.js.map",
     "787.78bfc86e.chunk.js.map": "/woodland-website/static/js/787.78bfc86e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba86c126.css",
-    "static/js/main.4b47952a.js"
+    "static/css/main.fb35d099.css",
+    "static/js/main.087917d4.js"
   ]
 }
