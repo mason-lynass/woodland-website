@@ -1,13 +1,10 @@
 function BigEvent({ show, bands, sanityLoaded }) {
 
-    // console.log(bands)
-    // console.log(show)
-
+    // this function returns a band from "bands" if whatever you pass into the function matches a band's id
+    // we only use this in allBands, passing in a band _ref from a single show
     function getBandFromRef(band) {
         if (band._ref) {
-            // console.log("this")
             const bandObject = bands.filter((b) => b._id === band._ref)
-            // console.log(bandObject)
             return bandObject
         }
         else return ""
@@ -15,18 +12,18 @@ function BigEvent({ show, bands, sanityLoaded }) {
 
     const bandsArray = []
 
+    // filter the keys of the show object to only get the band refs,
+    // use getBandFromRef with the ref to fill the bandsArray with band objects
     function allBands() {
-        // console.log(show)
         const bandRefsArray = (Object.entries(show).filter(([key]) => key.includes('band')))
-        // console.log(bandRefsArray)
         bandRefsArray.forEach((band) => bandsArray.push(getBandFromRef(band[1])))
-        // console.log(bandsArray)
     }
 
     if (show !== undefined && sanityLoaded === true) {
         allBands()
     }
 
+    // reformatting the dates from YYYY-MM-DD to MM/DD/YYYY
     function formatDate(input) {
         const pattern = /(\d{4})-(\d{2})-(\d{2})/;
         if (!input || !input.match(pattern)) {
@@ -36,6 +33,7 @@ function BigEvent({ show, bands, sanityLoaded }) {
     }
 
     function bandLinks() {
+        // if a show doesn't have any bands (if it's a market or workshop or something), show the description
         if (!show.band_1) {
             return (
                 <h3>{show.description}</h3>
@@ -50,6 +48,7 @@ function BigEvent({ show, bands, sanityLoaded }) {
         )
     }
 
+    // if there are no future shows, show a placeholder
     function theNextShow() {
         return (
             (show !== undefined) ?

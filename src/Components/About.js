@@ -69,7 +69,6 @@ function About() {
         <h2>History</h2>
         <div id='history-flex'>
           <img id='woodland-1932' src={OldWoodland} alt='Woodland Theater in 1932' />
-
           <div id='history-copy'>
             <p>The building which currently houses Woodland Theater was built in 1926 as a silent movie theater, with capacity for 600 movie-goers and complete with a Kimball Pipe Organ.</p>
             <p>Over the past 97 years, the building has been used as a movie theater, an <a target='_blank' rel='noopener noreferrer' href='https://vintagewestwoodland.com/2015/02/17/the-woodland-theater-becomes-a-ski-hill-in-1959/'>indoor ski park</a>, a medical device maker, a print shop, a record store, and a concert venue. </p>
@@ -81,8 +80,6 @@ function About() {
             <p>Thanks to <a target='_blank' rel='noopener noreferrer' href='https://vintagewestwoodland.com/2015/09/10/then-now-the-woodland-theater/'>Vintage West Woodland</a> for their historical research.</p>
           </div>
         </div>
-
-
       </section>
     </main>
   );

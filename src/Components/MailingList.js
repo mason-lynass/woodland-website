@@ -1,5 +1,8 @@
 function MailingList({ status, message, onSubmitted }) {
 
+    // this is a more customized, stylized component that uses Mailchimp-Subscribe
+    // see the Mailchimp-Subscribe docs on npm if you have questions
+    
     let input
     const submit = () => {
         input &&

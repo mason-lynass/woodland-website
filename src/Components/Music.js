@@ -3,18 +3,29 @@ import '../CSS/Music.css'
 
 function Music({ shows, bands, sanityLoaded }) {
 
+    // pageBands state needed for search capabilities - each time the search term changes, the pageBands are filtered
     const [pageBands, setPageBands] = useState(bands)
     const [search, setSearch] = useState("")
 
+    // to handle the initial page load
     useEffect(() => {
         setPageBands(bands)
     }, [bands])
 
+    // search logic
     useEffect(() => {
         let result = bands
         result = filterBySearch(result)
         setPageBands(result)
     }, [search])
+
+    function handleSearch(e) {
+        setSearch(e.target.value)
+    }
+
+    const filterBySearch = (r) => {
+        return bands.filter((band) => band.name.toLowerCase().includes(search.toLowerCase()))
+    }
 
     const alphaSortBands = pageBands.sort((a, b) => a.name.localeCompare(b.name))
 
@@ -25,23 +36,15 @@ function Music({ shows, bands, sanityLoaded }) {
                     <a className='band-link music-band' href={band.description} key={band._id} target='_blank' rel='noopener noreferrer'>
                         <h4>{band.name}</h4>
                     </a>
-
                 )
             })
         )
     }
 
+    // randomly selecting a band from bands and returning a link to their Bandcamp/website
     function randomBand() {
         const band = Math.floor(Math.random() * bands.length)
         return bands[band].description
-    }
-
-    function handleSearch(e) {
-        setSearch(e.target.value)
-    }
-
-    const filterBySearch = (r) => {
-        return bands.filter((band) => band.name.toLowerCase().includes(search.toLowerCase()))
     }
 
     return (

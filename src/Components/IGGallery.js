@@ -1,5 +1,6 @@
 function IGGallery({ behold, sanityLoaded }) {
 
+    // this function displays each JSON object we get from the Behold API, with a switch to check the object's 'mediaType'
     function getAllPics() {
 
         if (behold.length > 0) {
@@ -34,15 +35,10 @@ function IGGallery({ behold, sanityLoaded }) {
 
                             )
                     }
-                }
-                )
+                })
             )
         }
-
         else return <h2>loading...</h2>
-
-
-
     }
 
     return (

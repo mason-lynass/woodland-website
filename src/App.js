@@ -25,6 +25,7 @@ function App() {
   const [bands, setBands] = useState([])
   const [behold, setBehold] = useState({})
 
+  // initial page load
   useEffect(() => {
     fetch(beholdURL).then((res) => {
       if (res.ok) {
@@ -53,9 +54,12 @@ function App() {
   // subtract number of milliseconds in 7 hours (time conversion)
   const currentDate = Date.now() - 25200000
 
+  // sorting shows by date, oldest to newest
   const sortedShows = [...shows].sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
 
+  // every show that happens after the current datetime
   const futureShows = sortedShows.filter((show) => Date.parse(show.date) >= currentDate)
+  // every that that has happened before the current datetime
   const pastShows = sortedShows.filter((show) => Date.parse(show.date) < currentDate).sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 
   return (

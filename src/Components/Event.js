@@ -1,7 +1,6 @@
 function Event({ show, bands }) {
 
-    console.log(show)
-
+    // see BigEvent.js for comments
     function getBandFromRef(band) {
         if (band._ref) {
             const bandObject = bands.filter((b) => b._id === band._ref)
