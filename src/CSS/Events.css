@@ -83,6 +83,15 @@
     padding: 0px;
 }
 
+#no-events p {
+    font-size: calc((2 - 1) * 1.2vw + .5rem);
+}
+
+.no-events {
+    width: 70vw;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 600px) {
     #events-top {
         flex-flow: column nowrap;
@@ -147,5 +156,10 @@
     
     #past-events #events-list div #show-tags {
         padding: 0px;
+    }
+
+    .no-events {
+        width: 70vw;
+        margin: 0 auto;
     }
 }

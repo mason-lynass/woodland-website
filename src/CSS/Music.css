@@ -4,7 +4,7 @@
 
 #all-of-the-bands {
     display: grid;
-    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-columns: 25% 25% 25% 25%;
     margin: 30px 2%;
 }
 
@@ -42,8 +42,12 @@
 }
 
 #music-search {
-    width: fit-content;
-    margin: 40px auto;
+    width: 90%;
+    margin: 5vw auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5vw;
 }
 
 #music-search input {
@@ -61,7 +65,33 @@
     font-size: calc((1.7 - 1) * 1.2vw + .5rem);
 }
 
+#random-band {
+    width: auto;
+    background-color: rgb(2, 167, 158);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 900px) {
+    #music-search {
+        flex-flow: column-reverse nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #music-search input {
+        width: 70%;
+    }
+
+    #random-band {
+        width: fit-content;
+        font-size: calc((2.5 - 1) * 1.2vw + .5rem);
+    }
+
     #all-of-the-bands {
         grid-template-columns: 32% 32% 32%;
         gap: 20px 2%;

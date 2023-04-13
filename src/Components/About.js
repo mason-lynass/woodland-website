@@ -1,9 +1,9 @@
 import '../CSS/About.css'
 
-import Mason from "../Images/mason-woodland.jpg";
-import Lucas from "../Images/SocialIcon.png"
-import Tom from "../Images/Eykemans.jpg"
-import OldWoodland from "../Images/Woodland-Theater-1932.jpg"
+import Mason from "../Images/mason-woodland.webp";
+import Lucas from "../Images/SocialIcon.webp"
+import Tom from "../Images/Eykemans.webp"
+import OldWoodland from "../Images/Woodland-Theater-1932.webp"
 import MailingList from './MailingList';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 

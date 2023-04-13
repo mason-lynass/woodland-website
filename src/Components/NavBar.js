@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Logo from "../Images/old-woodland-logo.png"
+import Logo from "../Images/old-woodland-logo.webp"
 
 function NavBar() {
     return (

@@ -11,13 +11,10 @@ function Music({ shows, bands, sanityLoaded }) {
     }, [bands])
 
     useEffect(() => {
-        console.log('this')
         let result = bands
         result = filterBySearch(result)
         setPageBands(result)
     }, [search])
-
-    console.log(bands, pageBands)
 
     const alphaSortBands = pageBands.sort((a, b) => a.name.localeCompare(b.name))
 
@@ -34,6 +31,11 @@ function Music({ shows, bands, sanityLoaded }) {
         )
     }
 
+    function randomBand() {
+        const band = Math.floor(Math.random() * bands.length)
+        return bands[band].description
+    }
+
     function handleSearch(e) {
         setSearch(e.target.value)
     }
@@ -43,21 +45,25 @@ function Music({ shows, bands, sanityLoaded }) {
     }
 
     return (
-        <main id='music-main'>
-            <div id='music-top'>
-                <h1>~ All of the bands ~</h1>
-                <div id='music-body'>
-                    <h3>these are all of the bands that have played a show at Woodland since 2018.</h3>
-                    <h3>click on a band to check out their tunes!</h3>
+        (sanityLoaded === false) ?
+            <h2 id='music-loading'>loading...</h2>
+            :
+            <main id='music-main'>
+                <div id='music-top'>
+                    <h1>~ All of the bands ~</h1>
+                    <div id='music-body'>
+                        <h3>these are all of the bands that have played a show at Woodland since 2018.</h3>
+                        <h3>click on a band to check out their tunes!</h3>
+                    </div>
                 </div>
-            </div>
-            <div id='music-search'>
-                <input placeholder='search' onChange={handleSearch} value={search} type="text" name="search"></input>
-            </div>
-            <div id='all-of-the-bands'>
-                {AllOfTheBands()}
-            </div>
-        </main>
+                <div id='music-search'>
+                    <input placeholder='search' onChange={handleSearch} value={search} type="text" name="search"></input>
+                    <a id='random-band' href={randomBand()} rel='noopener noreferrer' target='_blank'>show me a random band</a>
+                </div>
+                <div id='all-of-the-bands'>
+                    {AllOfTheBands()}
+                </div>
+            </main>
     )
 }
 

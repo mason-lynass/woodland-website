@@ -1,5 +1,5 @@
 import "../CSS/Homepage.css"
-import Peg from "../Images/peg-at-woodland.jpg"
+import Peg from "../Images/peg-at-woodland.webp"
 
 import BigEvent from "./BigEvent";
 import MailingList from "./MailingList";

@@ -27,7 +27,7 @@ function BigEvent({ show, bands, sanityLoaded }) {
         allBands()
     }
 
-    function formatDate (input) {
+    function formatDate(input) {
         const pattern = /(\d{4})-(\d{2})-(\d{2})/;
         if (!input || !input.match(pattern)) {
             return null
@@ -50,13 +50,25 @@ function BigEvent({ show, bands, sanityLoaded }) {
         )
     }
 
+    function theNextShow() {
+        return (
+            (show !== undefined) ?
+                <div>
+                    <h4>{formatDate(show.date)}</h4>
+                    <div id='big-band-links'>{bandLinks()}</div>
+                    <p>({show.categories})</p>
+                </div>
+                :
+                <div id='no-events'>
+                    <p>no future events at the moment,</p>
+                    <p>stay tuned!</p>
+                </div>
+        )
+    }
+
     return (
-        (show !== undefined) ?
-            <div>
-                <h4>{formatDate(show.date)}</h4>
-                <div id='big-band-links'>{bandLinks()}</div>
-                <p>({show.categories})</p>
-            </div>
+        (bands !== undefined) ?
+            theNextShow()
             :
             <div>
                 <h2>loading...</h2>

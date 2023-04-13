@@ -1,5 +1,11 @@
-html, button, input {
+@font-face {
   font-family: 'Space Grotesk';
+  src: url(https://fonts.googleapis.com/css?family=Space+Grotesk);
+  font-display: swap;
+}
+
+html, button, input {
+  font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
 }
 
 h1 {
