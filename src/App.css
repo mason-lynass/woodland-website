@@ -1,5 +1,8 @@
 .blue {
-  background-color: rgb(2, 167, 158);
+  /* background-color: rgb(2, 167, 159); */
+  /* background-color: rgb(0, 63, 60); */
+  background-color: rgb(0, 95, 90);
+  /* background-color: rgb(9, 81, 23); */
 }
 
 #logo {
@@ -49,7 +52,8 @@ main h2 {
 
 #mailing-list {
   text-align: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  box-shadow: 1px 3px 5px 1px;
   border-radius: 10px;
   max-width: 550px;
   margin: 20px auto;
@@ -74,12 +78,12 @@ main h2 {
 }
 
 #mailing-list-submit {
-  height: 50px;
+  height: 45px;
   font-size: 20px;
-  background-color: rgb(2, 167, 158);
+  /* background-color: rgb(2, 167, 158); */
   color: white;
   border: 0px;
-  padding: 5px 20px;
+  padding: 5px 30px;
   border-radius: 20px;
 }
 

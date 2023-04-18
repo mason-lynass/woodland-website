@@ -61,7 +61,7 @@ function Music({ shows, bands, sanityLoaded }) {
                 </div>
                 <div id='music-search'>
                     <input placeholder='search' onChange={handleSearch} value={search} type="text" name="search"></input>
-                    <a id='random-band' href={randomBand()} rel='noopener noreferrer' target='_blank'>show me a random band</a>
+                    <a id='random-band' className='blue' href={randomBand()} rel='noopener noreferrer' target='_blank'>show me a random band</a>
                 </div>
                 <div id='all-of-the-bands'>
                     {AllOfTheBands()}

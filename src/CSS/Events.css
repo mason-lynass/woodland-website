@@ -12,6 +12,9 @@
     font-size: 16px;
     width: 140px;
     height: 50px;
+    color: white;
+    border: 0;
+    border-radius: 10px;
 }
 
 #future-events, #past-events {

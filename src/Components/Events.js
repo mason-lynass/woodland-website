@@ -22,7 +22,7 @@ function Events({ shows, bands, sanityLoaded, currentDate, sortedShows, futureSh
                 <div id='events-top'>
                     <p id='filler'></p>
                     <h1 id='events-title'>Events at Woodland</h1>
-                    <button id='cal-view-button' onClick={handleCalView}>
+                    <button id='cal-view-button' className="blue" onClick={handleCalView}>
                         {calView === 'future' ? 'past events' : 'future events'}
                     </button>
                 </div>

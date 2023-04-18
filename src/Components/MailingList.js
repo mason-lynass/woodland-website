@@ -20,7 +20,7 @@ function MailingList({ status, message, onSubmitted }) {
             </div>
             <div>
             <input type='email' id='mailing-list-address' placeholder="email address" ref={node => input = node}></input>
-                <button onClick={submit} id='mailing-list-submit'>SUBMIT</button>
+                <button onClick={submit} className='blue' id='mailing-list-submit'>SUBMIT</button>
             </div>
             <div id='mailing-list-errors'>
                 {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}

@@ -65,9 +65,13 @@
     font-size: calc((1.7 - 1) * 1.2vw + .5rem);
 }
 
+.music-band {
+    background-color: rgb(251, 255, 251);
+}
+
 #random-band {
     width: auto;
-    background-color: rgb(2, 167, 158);
+    /* background-color: rgb(2, 167, 158); */
     color: white;
     padding: 20px;
     border-radius: 20px;
