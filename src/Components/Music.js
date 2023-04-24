@@ -58,11 +58,12 @@ function Music({ shows, bands, sanityLoaded }) {
                         <h3>these are all of the bands that have played a show at Woodland since 2018.</h3>
                         <h3>click on a band to check out their tunes!</h3>
                     </div>
-                </div>
-                <div id='music-search'>
+                    <div id='music-search'>
                     <input placeholder='search' onChange={handleSearch} value={search} type="text" name="search"></input>
                     <a id='random-band' className='blue' href={randomBand()} rel='noopener noreferrer' target='_blank'>show me a random band</a>
                 </div>
+                </div>
+                
                 <div id='all-of-the-bands'>
                     {AllOfTheBands()}
                 </div>
