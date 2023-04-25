@@ -1,38 +1,21 @@
 ### Woodland Theater
 
-a website for Woodland Theater, a venue and arts space in Seattle, WA. made by Mason Lynass 
+a website for Woodland Theater, a venue and arts space in Seattle, WA. Made by Mason Lynass.
 
-## notes from woodland friends
+## Things to know about using / modifying this website
 
-- make the nav bar on the top
+This website was built using Create React App, which I guess is not the ideal way to build React apps anymore. After you clone this repo, you might need to run 'npm install', then you can run 'npm start' to run everything locally.
 
-# Homepage 
+This website is hosted on GitHub Pages, inside this GitHub repo. GitHub Pages doesn't really like hosting single-page React apps, and won't let you link to subdomains like "/events" or "/about". I might try to figure out a workaround for that, but just know that for now.
 
-- simple description about the space
+---
 
-- big banner about our next event
+I used a few third-party resources you should be aware of:
 
-- Instagram gallery
+- Woodland has a Mailchimp email list, set up long before this new website. The Mailing List component is wrapped in a 'Mailchimp-Subscribe' component, which allows us to add new users to the Mailchimp list when users submit their email to the form. Lucas has login info for Mailchimp.
 
-# About the space:
+- I used Behold to set up an extremely simple API which accesses the content of the Woodland Instagram so that we can display recent posts as a gallery on the home page. With the free tier, we can display the 6 most recent posts, and Behold will update the posts every 24 hours.
 
-- Description about the space, its history and current use.
+- I used Sanity Studio to build a no-frills API to store show data. There's a separate (private) GitHub repo that contains the Sanity API, which you can clone and run on your own device to write to the Woodland events database.
 
-- List any available spaces, if any - also link to sign up for a mailing list
-( “Our studios are currently full but if you would like to be notified when one is available please email woodland theater to be added to the waiting list”.)
-
-- Info about current tenants and their work
-
-# Events 
-
-- Current Events (list view and calendar view?)
-
-- Past events (just a list?)
-
-# Footer
-
-- Address
-
-- contact email
-
-- social media
+I have the Mailchimp email address POST url & API key, the Behold API url, and the Sanity project_id stored as environment variables locally. Ask me for these variables if you want to make any changes!
