@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/woodland-website/static/css/main.8ac0cc54.css",
+    "main.css": "/woodland-website/static/css/main.c0f2a1df.css",
     "main.js": "/woodland-website/static/js/main.c5b2f1f1.js",
     "static/js/787.78bfc86e.chunk.js": "/woodland-website/static/js/787.78bfc86e.chunk.js",
     "static/media/peg-at-woodland.webp": "/woodland-website/static/media/peg-at-woodland.75597ff78cce3de2dfc5.webp",
@@ -10,12 +10,12 @@
     "static/media/Eykemans.webp": "/woodland-website/static/media/Eykemans.ac57eea5aa72f3755232.webp",
     "static/media/mason-woodland.webp": "/woodland-website/static/media/mason-woodland.9b74f2fc29c1b5dfcaa1.webp",
     "index.html": "/woodland-website/index.html",
-    "main.8ac0cc54.css.map": "/woodland-website/static/css/main.8ac0cc54.css.map",
+    "main.c0f2a1df.css.map": "/woodland-website/static/css/main.c0f2a1df.css.map",
     "main.c5b2f1f1.js.map": "/woodland-website/static/js/main.c5b2f1f1.js.map",
     "787.78bfc86e.chunk.js.map": "/woodland-website/static/js/787.78bfc86e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ac0cc54.css",
+    "static/css/main.c0f2a1df.css",
     "static/js/main.c5b2f1f1.js"
   ]
 }
