@@ -14,15 +14,15 @@
   right: 0;
   margin: auto;
   /* transform: translate(-50%, 0); */
-  width: calc(140px * 1.88);
-  height: 140px;
+  width: calc(200px * 1.88);
+  height: 200px;
   background: transparent;
 }
 
 #nav-container {
   position: sticky;
   top: 0;
-  padding-bottom: 70px; 
+  padding-bottom: 100px; 
 }
 
 #nav-flex {
@@ -31,7 +31,7 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 50px;
+  padding: 37.25px 50px;
 }
 
 #nav-links {
@@ -44,6 +44,7 @@
 #nav-links a, #nav-flex a {
   text-decoration: none;
   color: white;
+  font-size: 20px;
 }
 
 main h2 {
@@ -127,10 +128,24 @@ main h2 {
   border: 1px solid black;
 }
 
+@media screen and (max-width: 1100px) {
+  #logo {
+    width: calc(1.88 * (200px + .15 * (100vw - 1100px)));
+    height: calc(200px + .15 * (100vw - 1100px));
+  }
+
+  .IGGallery-pic {
+    width: 40vw;
+    height: 40vw;
+    object-fit: cover;
+    border: 1px solid black;
+  }
+}
+
 @media screen and (max-width: 600px) {
   main h2 {
     text-align: center;
-    margin: 0 20px 40px 20px;
+    margin: 40px 20px;
   }
 
   #nav-flex {
@@ -143,12 +158,12 @@ main h2 {
   }
 
   #nav-container {
-    padding-bottom: 58px;
+    padding-bottom: 60px;
   }
 
   #logo { 
-    width: calc(80px * 1.88);
-    height: 80px;
+    width: calc(1.88 * (100px + .1 * (100vw - 600px)));
+    height: calc(100px + .1 * (100vw - 600px));
   }
 
   #nav-links {
@@ -170,13 +185,6 @@ main h2 {
     justify-content: center;
     align-items: center;
     gap: 5%;
-  }
-
-  .IGGallery-pic {
-    width: 40vw;
-    height: 40vw;
-    object-fit: cover;
-    border: 1px solid black;
   }
 
   #mailing-list-copy p {
