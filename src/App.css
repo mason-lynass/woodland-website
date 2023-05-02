@@ -31,7 +31,8 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 37.25px 50px;
+  padding: 37.5px 2vw;
+  gap: 2vw;
 }
 
 #nav-links {
@@ -49,18 +50,19 @@
 
 main h2 {
   text-align: center;
-  margin: 40px 20px;
+  margin: 20px;
 }
 
 #mailing-list {
   text-align: center;
-  /* border: 1px solid black; */
-  box-shadow: 0px 3px 5px ;
-  border-radius: 10px;
+  border-radius: 3px;
   max-width: 550px;
   margin: 20px auto;
   padding: 20px;
   background-color: white;
+  border: 12px solid transparent;
+	border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em,
+	              #58a 0, #58a 3em, transparent 0, transparent 4em);
 }
 
 #mailing-list-copy h2 {
@@ -95,13 +97,26 @@ main h2 {
 }
 
 #footer {
-  text-align: center;
-  padding: 30px;
+  text-align: left;
+  padding: 2vw;
   margin: 0px auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #footer, #footer a {
   color: white;
+}
+
+#footer p, #footer h2 {
+  margin: .5vw;
+}
+
+#IGFooter img {
+  height: 50px;
+  width: 50px;
 }
 
 #footer-flex {
@@ -111,19 +126,24 @@ main h2 {
   gap: 10px 50px;
 }
 
+#IGGallery {
+  margin: 5vw auto;
+}
+
 #IGGallery-all-pics {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   padding: 0 2vw;
   gap: 2vw;
+  max-width: 1200px;
+  margin: 2vw auto;
 }
 
 .IGGallery-pic {
-  width: 400px;
-  height: 400px;
-  margin: 5px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border: 1px solid black;
 }
@@ -135,8 +155,8 @@ main h2 {
   }
 
   .IGGallery-pic {
-    width: 40vw;
-    height: 40vw;
+    width: 27vw;
+    height: 27vw;
     object-fit: cover;
     border: 1px solid black;
   }
@@ -145,7 +165,7 @@ main h2 {
 @media screen and (max-width: 600px) {
   main h2 {
     text-align: center;
-    margin: 40px 20px;
+    margin: 3vw;
   }
 
   #nav-flex {
@@ -153,7 +173,8 @@ main h2 {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 15px;
+    padding: 20px 3vw;
+    width: 94vw;
     gap: 20px;
   }
 
@@ -206,11 +227,12 @@ main h2 {
   }
 
   #mailing-list {
-    margin: 20px 3%;
+    margin: 5vw auto;
+    width: 80vw;
   }
 
   #footer {
-    padding: 1px;
+    padding: 3vw;
   }
 
   #footer-flex {

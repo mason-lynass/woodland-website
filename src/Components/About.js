@@ -11,22 +11,22 @@ function About() {
   return (
     <main id='about-main'>
       <div id='woodland-about'>
-        <h1>
+        <h2>
           Woodland Theater is a multi-use creative complex making space for
           artists in Seattle.
-        </h1>
-        <h2>
+        </h2>
+        <h3>
           We provide private practice spaces and studios for musicians &
           artists, and occasionally host workshops, performances, and other
           events for our creatives.
-        </h2>
+        </h3>
       </div>
       <div id='tenants-about'>
         <h1>About our tenants:</h1>
         <div id="tenants-flex">
           <div className="one-tenant">
             <h3>Mason Lynass</h3>
-            <img src={Mason} alt="Mason at woodland" />
+            <img src={Mason} alt="Mason at woodland" loading='lazy' />
             <p>
               Mason Lynass is a multi-instrumentalist and composer. He has
               performed with many musicians around Seattle and the US, worked as
@@ -38,14 +38,14 @@ function About() {
           </div>
           <div className="one-tenant">
             <h3>Lucas Fisher</h3>
-            <img src={Lucas} alt="icon of Lucas" />
+            <img src={Lucas} alt="icon of Lucas" loading='lazy' />
             <p>
               Lucas Fisher is a 3D artist, game developer, and musician. Having often worked in the intersection of disciplines, Woodland has been a fertile ground for experimentation and collaboration for him since 2017.
             </p>
           </div>
           <div className="one-tenant">
             <h3>Tom Eykemans</h3>
-            <img src={Tom} alt="Tom" />
+            <img src={Tom} alt="Tom with camera" loading='lazy' />
             <p>
               Tom Eykemans is a book designer at Marquand Books, created the independent publishing imprint Tome Press, and co-founded the Seattle Art Book Fair. When not making books and zines and posters, he seeks ways to help build creative communities at Woodland Theater.
             </p>

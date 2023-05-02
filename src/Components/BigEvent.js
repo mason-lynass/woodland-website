@@ -42,7 +42,7 @@ function BigEvent({ show, bands, sanityLoaded }) {
         else return (
             bandsArray.map((band) => {
                 return (
-                    <a key={band[0].name} className="band-link" href={band[0].description} rel="noopener noreferrer">{band[0].name}</a>
+                    <a key={band[0].name} className="band-link" href={band[0].description} target='_blank' rel="noopener noreferrer">{band[0].name}</a>
                 )
             })
         )

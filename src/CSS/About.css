@@ -3,11 +3,12 @@
 }
 
 #woodland-about {
-  margin: 20px 4vw;
+  margin: 20px 5vw;
 }
 
-#woodland-about h2 {
-  margin: auto 10vw;
+#woodland-about h2, #woodland-about h3 {
+  text-align: left;
+  margin: 2vw 0;
 }
 
 #tenants-about {
@@ -23,7 +24,7 @@
 #tenants-flex {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: top;
   margin: 20px 5vw;
   gap: 20px;
@@ -43,7 +44,7 @@
 }
 
 #about-bottom {
-  max-width: 800px;
+  width: 75vw;
   margin: 50px auto;
   padding: 0 50px;
 }
@@ -57,7 +58,7 @@
   flex-flow: row wrap;
   justify-content: center;
   gap: 5%;
-  align-items: top;
+  align-items: start;
 }
 
 #history-copy {
@@ -67,11 +68,13 @@
 
 #history-copy p {
   font-size: calc((1.7 - 1) * 1.2vw + .6rem);
+  margin: 1vw 0;
 }
 
 #woodland-1932 {
   width: 50%;
-  max-width: 600px;
+  max-width: 500px;
+  margin: 1em 0;
 }
 
 @media screen and (max-width: 987px) {
@@ -102,10 +105,12 @@
 }
 
 @media screen and (max-width: 600px) {
-  
+  #woodland-1932 {
+    width: 100%;
+  }
 
   #woodland-about h2 {
-    margin: 20px auto;
+    margin: 4vw auto;
   }
 
   #woodland-about {
@@ -113,11 +118,11 @@
   }
 
   #tenants-about {
-    margin: 60px 0;
+    margin: 10vw 0;
   }
 
   #about-bottom h4 {
-    padding: 10px;
+    padding: 3vw;
   }
 
   #about-bottom {
@@ -129,7 +134,24 @@
     margin: 0 4vw;
   }
 
-  
+  #history {
+    margin: 12vw auto 4vw auto;
+  }
+
+  #history-flex {
+    flex-flow: column-reverse wrap;
+    margin: 0 4vw;
+  }
+
+  #history-copy p {
+    font-size: calc((1.7 - 1) * 1.2vw + .72rem);
+    margin: 2vw;
+  }
+
+  #history-copy {
+    margin: 2vw 0;
+    width: 100%;
+  }
 
   
 }

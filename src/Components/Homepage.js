@@ -4,6 +4,7 @@ import Peg from "../Images/peg-at-woodland.webp"
 import BigEvent from "./BigEvent";
 import MailingList from "./MailingList";
 import IGGallery from "./IGGallery";
+import HomepageEvents from "./HomepageEvents";
 
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
@@ -16,14 +17,13 @@ function Homepage({ shows, bands, currentDate, sortedShows, futureShows, sanityL
         artists in Seattle.
       </h2>
       <section id='homepage-top'>
-        <img id='peg-at-woodland' src={Peg} alt='Peg performing at the Woodland Theater' />
-        <div id="next-event">
+        <img id='peg-at-woodland' src={Peg} alt='Peg performing at the Woodland Theater' loading='lazy' />
+        <HomepageEvents futureShows={futureShows} bands={bands}/>
+        {/* <div id="next-event">
           <h2>Our next event:</h2>
           <BigEvent show={futureShows[0]} bands={bands} sanityLoaded={sanityLoaded} />
-        </div>
+        </div> */}
       </section>
-
-      <IGGallery behold={behold} sanityLoaded={sanityLoaded} />
       <MailchimpSubscribe
         url={process.env.REACT_APP_MAILCHIMP_URL}
         render={({ subscribe, status, message }) => (
@@ -33,6 +33,8 @@ function Homepage({ shows, bands, currentDate, sortedShows, futureShows, sanityL
             onSubmitted={formData => subscribe(formData)} />
         )}
       />
+      <IGGallery behold={behold} sanityLoaded={sanityLoaded} />
+
     </main>
   );
 }

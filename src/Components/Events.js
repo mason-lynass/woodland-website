@@ -20,45 +20,39 @@ function Events({ shows, bands, sanityLoaded, currentDate, sortedShows, futureSh
             :
             <main id='events-main'>
                 <div id='events-top'>
-                    <p id='filler'></p>
+                    {/* <p id='filler'></p> */}
                     <h1 id='events-title'>Events at Woodland</h1>
-                    <button id='cal-view-button' className="blue" onClick={handleCalView}>
+                    {/* <button id='cal-view-button' className="blue" onClick={handleCalView}>
                         {calView === 'future' ? 'past events' : 'future events'}
-                    </button>
+                    </button> */}
                 </div>
 
                 <section id='all-events'>
-                    {calView === 'future' ?
-                        <>
-                            <div id='future-events'>
-                                <h2>Coming Soon:</h2>
-                                <div id='events-list'>
-                                    <EventsList shows={futureShows} bands={bands} />
-
-                                </div>
-
-                            </div>
-                            <MailchimpSubscribe
-                                url={process.env.REACT_APP_MAILCHIMP_URL}
-                                render={({ subscribe, status, message }) => (
-                                    <MailingList
-                                        status={status}
-                                        message={message}
-                                        onSubmitted={formData => subscribe(formData)} />
-                                )}
-                            />
-                        </>
-                        :
-                        <div id='past-events'>
-                            <h3>past events:</h3>
+                    <>
+                        <div id='future-events'>
+                            <h2>Coming Soon:</h2>
                             <div id='events-list'>
-                                <EventsList shows={pastShows} bands={bands} />
+                                <EventsList shows={futureShows} bands={bands} />
+
                             </div>
 
                         </div>
-
-                    }
-
+                        <MailchimpSubscribe
+                            url={process.env.REACT_APP_MAILCHIMP_URL}
+                            render={({ subscribe, status, message }) => (
+                                <MailingList
+                                    status={status}
+                                    message={message}
+                                    onSubmitted={formData => subscribe(formData)} />
+                            )}
+                        />
+                    </>
+                    <div id='past-events'>
+                        <h3>past events:</h3>
+                        <div id='events-list'>
+                            <EventsList shows={pastShows} bands={bands} />
+                        </div>
+                    </div>
                 </section>
             </main>
     )

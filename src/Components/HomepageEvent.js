@@ -1,4 +1,6 @@
-function Event({ show, bands }) {
+function HomepageEvent ({show, bands}) {
+
+    console.log(show)
 
     // see BigEvent.js for comments
     function getBandFromRef(band) {
@@ -43,19 +45,20 @@ function Event({ show, bands }) {
     }
 
     function showTitle () {
-        if (show.show_title) return <div id='show-title'><h4>{show.show_title}</h4></div>
+        if (show.show_title) return <h3>{show.show_title}</h3>
     }
 
     return (
-        <div className="one-show">
-            <h4 id='show-date'>{formatDate(show.date)}</h4>
-            <div id='show-tags'>
-                {showTitle()}
-                <div id='band-links'>{bandLinks()}</div>
+        <div className="one-event">
+            <h4 id='event-date'>{formatDate(show.date)}</h4>
+            <div id='event-tags'>
+                <div id='event-title'>{showTitle()}</div>
+                <div id='event-band-links'>{bandLinks()}</div>
             </div>
-            <h4 id='show-categories'>{show.categories}</h4>
+            {/* <h4 id='event-categories'>{show.categories}</h4> */}
         </div>
     )
+
 }
 
-export default Event
+export default HomepageEvent
