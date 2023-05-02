@@ -1,17 +1,17 @@
 #music-main {
-    margin: 4vw 0;
+    margin: 1vw 0;
 }
 
 #all-of-the-bands {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    margin: 30px 2%;
+    margin: 1vw 0;
 }
 
 #all-of-the-bands a {
     padding: 10px;
     width: 16vw;
-    margin: 2vw auto;
+    margin: 1vw auto;
     align-self: center;
     text-decoration: none;
     border: 1px solid black;
@@ -36,14 +36,14 @@
     width: 100%;
     font-size: calc((2 - 1) * 1.2vw + .5rem);
     background-image: linear-gradient(to bottom, rgba(41, 122, 122, 0.1), rgb(255, 255, 255, 1), rgb(255, 255, 255, 1), rgb(255, 255, 255, 1), rgba(41, 122, 122, 0.1));
-    margin: 0px auto;
-    padding: 50px 0;
+    margin: 0 auto;
+    padding: 2vw;
     background-color: white;
 }
 
 #music-search {
     width: 90%;
-    margin: 5vw auto;
+    margin: 2vw auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -114,22 +114,31 @@
 
 @media screen and (max-width: 600px) {
 
+    #music-top {
+        margin: -2vw auto;
+    }
+
     #all-of-the-bands {
-        grid-template-columns: 49% 49%;
-        gap: 0px 2%;
-        margin: auto 3%;
+        grid-template-columns: 100%;
+        gap: 0px;
+        margin: 10vw 3vw;
     }
 
     #all-of-the-bands a {
-        width: 30vw;
+        width: 80vw;
+        padding: 1vw;
     }
 
     #music-body {
-        padding: 10vw;
+        padding: 2vw 10vw;
         width: 80vw;
     }
 
     #music-search {
-        margin-top: 0;
+        margin: 4vw;
+    }
+
+    #music-search input {
+        padding: 2vw 3vw;
     }
 }

@@ -11,15 +11,15 @@ function About() {
   return (
     <main id='about-main'>
       <div id='woodland-about'>
-        <h1>
+        <h2>
           Woodland Theater is a multi-use creative complex making space for
           artists in Seattle.
-        </h1>
-        <h2>
+        </h2>
+        <h3>
           We provide private practice spaces and studios for musicians &
           artists, and occasionally host workshops, performances, and other
           events for our creatives.
-        </h2>
+        </h3>
       </div>
       <div id='tenants-about'>
         <h1>About our tenants:</h1>

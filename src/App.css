@@ -55,13 +55,14 @@ main h2 {
 
 #mailing-list {
   text-align: center;
-  /* border: 1px solid black; */
-  box-shadow: 0px 3px 5px ;
-  border-radius: 10px;
+  border-radius: 3px;
   max-width: 550px;
   margin: 20px auto;
   padding: 20px;
   background-color: white;
+  border: 12px solid transparent;
+	border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em,
+	              #58a 0, #58a 3em, transparent 0, transparent 4em);
 }
 
 #mailing-list-copy h2 {
@@ -172,7 +173,8 @@ main h2 {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 15px;
+    padding: 20px 3vw;
+    width: 94vw;
     gap: 20px;
   }
 
@@ -225,7 +227,8 @@ main h2 {
   }
 
   #mailing-list {
-    margin: 20px 3%;
+    margin: 5vw auto;
+    width: 80vw;
   }
 
   #footer {

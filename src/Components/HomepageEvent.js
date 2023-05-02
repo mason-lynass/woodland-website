@@ -55,7 +55,7 @@ function HomepageEvent ({show, bands}) {
                 <div id='event-title'>{showTitle()}</div>
                 <div id='event-band-links'>{bandLinks()}</div>
             </div>
-            <h4 id='event-categories'>{show.categories}</h4>
+            {/* <h4 id='event-categories'>{show.categories}</h4> */}
         </div>
     )
 
