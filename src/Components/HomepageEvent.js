@@ -1,7 +1,5 @@
 function HomepageEvent ({show, bands}) {
 
-    console.log(show)
-
     // see BigEvent.js for comments
     function getBandFromRef(band) {
         if (band._ref) {
@@ -11,7 +9,7 @@ function HomepageEvent ({show, bands}) {
         else return ""
     }
 
-    const bandsArray = []
+    let bandsArray = []
 
     function allBands() {
         const bandRefsArray = (Object.entries(show).filter(([key]) => key.includes('band')))
@@ -31,8 +29,11 @@ function HomepageEvent ({show, bands}) {
     }
 
     function bandLinks() {
-
-        if (bandsArray.length > 0) {
+        if (bandsArray.length === 0) {
+            return <h4>{show.tags}</h4>
+        }
+        if (bandsArray.length >= 1) {
+        // if (bandsArray !== undefined) {
             return (
                 bandsArray.map((band) => {
                     return (
@@ -41,7 +42,6 @@ function HomepageEvent ({show, bands}) {
                 })
             )
         }
-        else return <h4>{show.tags}</h4>
     }
 
     function showTitle () {

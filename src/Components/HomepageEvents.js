@@ -4,13 +4,11 @@ import { Link } from "react-router-dom"
 
 function HomepageEvents({ futureShows, bands }) {
 
-    console.log(futureShows)
-
     function allHomepageEvents() {
         return (
             futureShows.map((show) => {
                 return (
-                    <HomepageEvent show={show} bands={bands}/>
+                    <HomepageEvent show={show} bands={bands} key={show._id}/>
                 )
             })
         )

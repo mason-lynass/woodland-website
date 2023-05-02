@@ -58,7 +58,7 @@
   flex-flow: row wrap;
   justify-content: center;
   gap: 5%;
-  align-items: start;
+  align-items: flex-start;
 }
 
 #history-copy {
