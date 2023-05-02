@@ -43,14 +43,14 @@ function Event({ show, bands }) {
     }
 
     function showTitle () {
-        if (show.show_title) return <h3>{show.show_title}</h3>
+        if (show.show_title) return <div id='show-title'><h4>{show.show_title}</h4></div>
     }
 
     return (
         <div className="one-show">
             <h4 id='show-date'>{formatDate(show.date)}</h4>
             <div id='show-tags'>
-                <div id='show-title'>{showTitle()}</div>
+                {showTitle()}
                 <div id='band-links'>{bandLinks()}</div>
             </div>
             <h4 id='show-categories'>{show.categories}</h4>

@@ -1,14 +1,17 @@
 #events-top {
     text-align: center;
     margin: 20px auto;
-    padding: 0px 50px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0px 30px;
 }
 
-#cal-view-button, #filler {
+#events-list {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 5vw;
+}
+
+#cal-view-button,
+#filler {
     font-size: 16px;
     width: 140px;
     height: 50px;
@@ -17,14 +20,11 @@
     border-radius: 10px;
 }
 
-#future-events, #past-events {
-    padding: 20px;
-    margin: 30px auto;
+#future-events,
+#past-events {
+    padding: 10px;
+    margin: 2vw auto;
     text-align: center;
-}
-
-#future-events {
-    margin-bottom: 200px;
 }
 
 .one-show {
@@ -32,54 +32,66 @@
     flex-flow: row nowrap;
     justify-content: right;
     align-items: center;
-    border: 3px ridge rgb(2, 167, 158);
-    border-radius: 30px;
-    background-color: white;
-    margin: 20px;
+    /* border: 3px ridge rgb(2, 167, 158);
+    border-radius: 30px; */
+    /* background-color: white; */
+    padding: 2vw;
+    
 }
 
-#show-date, #show-categories {
-    margin: 10px;
+.one-show:nth-of-type(odd) {
+    background: rgba(194, 194, 194, .15);
+}
+
+.one-show:nth-of-type(even) {
+    background: rgba(194, 194, 194, .3);
+}
+
+#show-date,
+#show-categories {
+    margin: 0;
     width: 10vw;
     flex-shrink: 0;
     text-align: center;
 }
 
+#show-categories {
+    font-size: calc((1.7 - 1) * 1.2vw + .5rem);
+}
+
 #show-tags {
     width: 80%;
     min-width: 200px;
-    padding: 10px;
     line-break: normal;
 }
 
 #show-title {
-    margin: 20px auto 0 auto;
+    margin: 0 0 1vw 0;
     width: fit-content;
-    max-width: 80%;
+    max-width: 90%;
 }
 
-#show-title h3 {
-    border-radius: 10px;
-    border: 2px solid rgb(2, 167, 158);
-    color: black;
-    background-color: rgb(240, 253, 240);
+#show-title h4 {
     width: fit-content;
-    margin: 0;
-    padding: 10px 20px;
-    
+    text-align: left;
 }
 
-.event-band-link {
-    margin: 20px;
+.event-band-link, #show-title h4, #band-links h4 {
+    margin: 0 2vw;
     color: black;
-    font-size: calc((2.1 - 1) * 1.2vw + .4rem) ;
+    font-size: calc((1.7 - 1) * 1.2vw + .6rem);
+    text-decoration: none;
 }
+
+.event-band-link:hover {
+    color: rgb(2, 167, 158);
+  }
 
 .one-show #show-tags #band-links {
-    margin: 10px 10px 20px 10px;
+    margin: 0px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: left;
 }
 
 #past-events #events-list div #show-tags {
@@ -102,8 +114,12 @@
         padding: 0;
         /* gap: 10px; */
     }
-    
-    #cal-view-button{
+
+    #events-title {
+        font-size: calc((2 - 1) * 1.2vw + 1.5rem);
+    }
+
+    #cal-view-button {
         font-size: 14px;
         width: 120px;
         height: 30px;
@@ -119,23 +135,32 @@
         height: 0;
         margin: 0;
     }
-    
-    #future-events, #past-events {
+
+    #future-events,
+    #past-events {
         padding: 0px;
-        margin: 50px auto;
+        margin: 10vw auto;
     }
-    
+
+    #events-list {
+        padding: 3%;
+    }
+
     .one-show {
         flex-flow: column nowrap;
-        margin: 5%;
-        padding: 0 10px;
+        padding: 2vw;
     }
 
     #show-title {
         margin: 0 auto;
     }
-    
-    #show-date, #show-categories {
+
+    #show-title h4 {
+        text-align: center;
+    }
+
+    #show-date,
+    #show-categories {
         width: auto;
         min-width: 100px;
         margin: 5px auto;
@@ -150,13 +175,14 @@
         display: block;
         font-size: 1rem;
         margin: 5px auto;
+        color:rgb(9, 132, 125);
     }
-    
+
     #show-tags {
         width: 100%;
         padding: 0px;
     }
-    
+
     #past-events #events-list div #show-tags {
         padding: 0px;
     }

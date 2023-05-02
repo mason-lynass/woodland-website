@@ -118,6 +118,15 @@
 }
 
 @media screen and (max-width: 600px) {
+  #homepage-top {
+    margin: 5vw 1vw;
+    flex-flow: column-reverse wrap;
+  }
+
+  #homepage-events {
+    width: 90vw;
+  }
+
     #next-event {
       margin: 20px auto;
       padding: 5vw;
