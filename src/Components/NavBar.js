@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 // import Logo from "../Images/old-woodland-logo.webp"
-import Logo from "../Images/WoodlandTheater_Logo_200px_height.png"
+import Logo from "../Images/WoodlandTheater_Logo_200px_height.webp"
 
 function NavBar() {
     return (

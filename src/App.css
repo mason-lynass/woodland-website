@@ -49,7 +49,7 @@
 
 main h2 {
   text-align: center;
-  margin: 40px 20px;
+  margin: 20px;
 }
 
 #mailing-list {
@@ -111,6 +111,10 @@ main h2 {
   gap: 10px 50px;
 }
 
+#IGGallery {
+  margin: 5vw auto;
+}
+
 #IGGallery-all-pics {
   display: flex;
   flex-flow: row wrap;
@@ -118,12 +122,13 @@ main h2 {
   align-items: center;
   padding: 0 2vw;
   gap: 2vw;
+  max-width: 1200px;
+  margin: 2vw auto;
 }
 
 .IGGallery-pic {
-  width: 400px;
-  height: 400px;
-  margin: 5px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border: 1px solid black;
 }
@@ -135,8 +140,8 @@ main h2 {
   }
 
   .IGGallery-pic {
-    width: 40vw;
-    height: 40vw;
+    width: 30vw;
+    height: 30vw;
     object-fit: cover;
     border: 1px solid black;
   }

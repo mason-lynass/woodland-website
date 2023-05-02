@@ -10,27 +10,27 @@ function IGGallery({ behold, sanityLoaded }) {
                         case "IMAGE":
                             return (
                                 <a href={item.permalink} key={item.id} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" alt={item.prunedCaption} src={item.mediaUrl}></img>
+                                    <img className="IGGallery-pic" loading='lazy' alt={item.prunedCaption} src={item.mediaUrl}></img>
                                 </a>
 
                             )
                         case 'VIDEO':
                             return (
                                 <a href={item.permalink} key={item.id} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" alt={item.prunedCaption} src={item.thumbnailUrl}></img>
+                                    <img className="IGGallery-pic" loading='lazy' alt={item.prunedCaption} src={item.thumbnailUrl}></img>
                                 </a>
 
                             )
                         case 'CAROUSEL_ALBUM':
                             return (
                                 <a href={item.permalink} key={item.id} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" alt={item.prunedCaption} src={item.mediaUrl}></img>
+                                    <img className="IGGallery-pic" loading='lazy' alt={item.prunedCaption} src={item.mediaUrl}></img>
                                 </a>
                             )
                         default:
                             return (
                                 <a href={item.permalink} key={item.id} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" alt={item.prunedCaption} src={item.mediaUrl}></img>
+                                    <img className="IGGallery-pic" loading='lazy' alt={item.prunedCaption} src={item.mediaUrl}></img>
                                 </a>
 
                             )
@@ -43,7 +43,7 @@ function IGGallery({ behold, sanityLoaded }) {
 
     return (
         (sanityLoaded === true ?
-            <section>
+            <section id='IGGallery'>
                 <h2>From the Woodland Instagram feed:</h2>
                 <div id='IGGallery-all-pics'>
                     {getAllPics()}
