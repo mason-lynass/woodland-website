@@ -165,7 +165,7 @@ main h2 {
 @media screen and (max-width: 600px) {
   main h2 {
     text-align: center;
-    margin: 3vw;
+    margin: 3vw 5vw;
   }
 
   #nav-flex {
@@ -205,7 +205,9 @@ main h2 {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    gap: 5%;
+    gap: 2vw;
+    margin: 0 5vw;
+    padding: 0;
   }
 
   #mailing-list-copy p {
@@ -227,6 +229,7 @@ main h2 {
   }
 
   #mailing-list {
+    padding: 3vw 2vw;
     margin: 5vw auto;
     width: 80vw;
   }

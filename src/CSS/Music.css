@@ -125,7 +125,7 @@
     }
 
     #all-of-the-bands a {
-        width: 80vw;
+        width: 70vw;
         padding: 1vw;
     }
 
@@ -140,5 +140,6 @@
 
     #music-search input {
         padding: 2vw 3vw;
+        width: 68vw;
     }
 }

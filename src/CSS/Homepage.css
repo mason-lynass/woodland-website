@@ -120,7 +120,7 @@
 
 @media screen and (max-width: 808px) {
   #homepage-top {
-    margin: 5vw 1vw;
+    margin: 5vw;
     flex-flow: column-reverse wrap;
     gap: 5vw;
   }
@@ -131,7 +131,7 @@
   }
 
   #homepage-events {
-    width: 90vw;
+    width: 88vw;
   }  
   
   #event-date {
