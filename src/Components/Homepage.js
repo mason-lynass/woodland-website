@@ -18,7 +18,7 @@ function Homepage({ shows, bands, currentDate, sortedShows, futureShows, sanityL
       </h2>
       <section id='homepage-top'>
         <img id='peg-at-woodland' src={Peg} alt='Peg performing at the Woodland Theater' loading='lazy' />
-        <HomepageEvents futureShows={futureShows} bands={bands}/>
+        <HomepageEvents futureShows={futureShows} bands={bands} sanityLoaded={sanityLoaded}/>
         {/* <div id="next-event">
           <h2>Our next event:</h2>
           <BigEvent show={futureShows[0]} bands={bands} sanityLoaded={sanityLoaded} />
