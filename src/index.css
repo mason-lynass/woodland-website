@@ -4,8 +4,9 @@
   font-display: swap;
 }
 
-html, button, input {
+html, button, input, h1, h2, h3, h4, p, a {
   font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+  font-weight: normal;
 }
 
 h1 {
