@@ -29,11 +29,7 @@ function HomepageEvent ({show, bands}) {
     }
 
     function bandLinks() {
-        if (bandsArray.length === 0) {
-            return <h4>{show.tags}</h4>
-        }
-        if (bandsArray.length >= 1) {
-        // if (bandsArray !== undefined) {
+        if (show.hasOwnProperty('band_1')) {
             return (
                 bandsArray.map((band) => {
                     return (
@@ -42,7 +38,12 @@ function HomepageEvent ({show, bands}) {
                 })
             )
         }
+        else {
+            return <h4>{show.tags}</h4>
+        }
     }
+
+
 
     function showTitle () {
         if (show.show_title) return <h3>{show.show_title}</h3>
