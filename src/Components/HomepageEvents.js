@@ -20,7 +20,7 @@ function HomepageEvents({ futureShows, bands, sanityLoaded }) {
                 <>
                     <h4 id='homepage-events-title'>Coming up:</h4>
                     {allHomepageEvents()}
-                    <Link className="blue" id="to-past-events" to="/events">More Events</Link>
+                    <Link className="blue" aria-label="More Events" id="to-past-events" to="/events">More Events</Link>
                 </>
                 :
                 <h4 id='homepage-events-title'>loading....</h4>

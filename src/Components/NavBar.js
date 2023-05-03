@@ -21,7 +21,7 @@ function NavBar() {
                 </a> */}
             </div>
             <Link id="to-home" to="/">
-                <img src={Logo} alt='' id="logo" />
+                <img src={Logo} alt='to the Woodland home page' aria-label='to the Woodland home page' id="logo" />
             </Link>
 
         </div>
