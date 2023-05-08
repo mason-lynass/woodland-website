@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/woodland-website/static/css/main.7e3dfec6.css",
-    "main.js": "/woodland-website/static/js/main.97a44774.js",
-    "static/js/787.78bfc86e.chunk.js": "/woodland-website/static/js/787.78bfc86e.chunk.js",
-    "static/media/peg-at-woodland.webp": "/woodland-website/static/media/peg-at-woodland.75597ff78cce3de2dfc5.webp",
-    "static/media/Woodland-Theater-1932.webp": "/woodland-website/static/media/Woodland-Theater-1932.032737c66e5ec95d2ce3.webp",
-    "static/media/SocialIcon.webp": "/woodland-website/static/media/SocialIcon.31a7d03865443938efcb.webp",
-    "static/media/Eykemans.webp": "/woodland-website/static/media/Eykemans.ac57eea5aa72f3755232.webp",
-    "static/media/mason-woodland.webp": "/woodland-website/static/media/mason-woodland.9b74f2fc29c1b5dfcaa1.webp",
-    "static/media/WoodlandTheater_Logo_200px_height.webp": "/woodland-website/static/media/WoodlandTheater_Logo_200px_height.fceb0ada536ef2726685.webp",
-    "static/media/instagram.svg": "/woodland-website/static/media/instagram.2964857818dad1b75fccf355259c5575.svg",
-    "index.html": "/woodland-website/index.html",
-    "main.7e3dfec6.css.map": "/woodland-website/static/css/main.7e3dfec6.css.map",
-    "main.97a44774.js.map": "/woodland-website/static/js/main.97a44774.js.map",
-    "787.78bfc86e.chunk.js.map": "/woodland-website/static/js/787.78bfc86e.chunk.js.map"
+    "main.css": "/static/css/main.7e3dfec6.css",
+    "main.js": "/static/js/main.a269854c.js",
+    "static/js/787.78bfc86e.chunk.js": "/static/js/787.78bfc86e.chunk.js",
+    "static/media/peg-at-woodland.webp": "/static/media/peg-at-woodland.75597ff78cce3de2dfc5.webp",
+    "static/media/Woodland-Theater-1932.webp": "/static/media/Woodland-Theater-1932.032737c66e5ec95d2ce3.webp",
+    "static/media/SocialIcon.webp": "/static/media/SocialIcon.31a7d03865443938efcb.webp",
+    "static/media/Eykemans.webp": "/static/media/Eykemans.ac57eea5aa72f3755232.webp",
+    "static/media/mason-woodland.webp": "/static/media/mason-woodland.9b74f2fc29c1b5dfcaa1.webp",
+    "static/media/WoodlandTheater_Logo_200px_height.webp": "/static/media/WoodlandTheater_Logo_200px_height.fceb0ada536ef2726685.webp",
+    "static/media/instagram.svg": "/static/media/instagram.2964857818dad1b75fccf355259c5575.svg",
+    "index.html": "/index.html",
+    "main.7e3dfec6.css.map": "/static/css/main.7e3dfec6.css.map",
+    "main.a269854c.js.map": "/static/js/main.a269854c.js.map",
+    "787.78bfc86e.chunk.js.map": "/static/js/787.78bfc86e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e3dfec6.css",
-    "static/js/main.97a44774.js"
+    "static/js/main.a269854c.js"
   ]
 }
