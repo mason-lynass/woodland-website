@@ -1,12 +1,14 @@
-### Woodland Theater
+# Woodland Theater
 
 a website for Woodland Theater, a venue and arts space in Seattle, WA. Made by Mason Lynass.
+
+https://www.woodlandtheater.org
 
 ## Things to know about using / modifying this website
 
 This website was built using Create React App, which I guess is not the ideal way to build React apps anymore. After you clone this repo, you might need to run 'npm install', then you can run 'npm start' to run everything locally.
 
-This website is hosted on GitHub Pages, inside this GitHub repo. GitHub Pages doesn't really like hosting single-page React apps, and won't let you link to subdomains like "/events" or "/about". I might try to figure out a workaround for that, but just know that for now.
+This website is hosted on GitHub Pages, inside this GitHub repo.
 
 ---
 
@@ -18,4 +20,8 @@ I used a few third-party resources you should be aware of:
 
 - I used Sanity Studio to build a no-frills API to store show data. There's a separate (private) GitHub repo that contains the Sanity API, which you can clone and run on your own device to write to the Woodland events database.
 
-I have the Mailchimp email address POST url & API key, the Behold API url, and the Sanity project_id stored as environment variables locally. Ask me for these variables if you want to make any changes!
+I have the Mailchimp email address POST url & API key, the Behold API url, and the Sanity project_id stored as environment variables locally. If you're a person that rents space at Woodland, ask me for these variables if you want to make any changes!
+
+## Repo:
+
+https://github.com/mason-lynass/woodland-website
