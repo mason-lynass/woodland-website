@@ -18,7 +18,7 @@ function About() {
         <h3>
           We provide private practice spaces and studios for musicians &
           artists, and occasionally host workshops, performances, and other
-          events for our creatives.
+          events for our community.
         </h3>
       </div>
       <div id='tenants-about'>
