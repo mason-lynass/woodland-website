@@ -85,7 +85,7 @@ function About() {
           </div>
           <div className="one-tenant">
             <h3>Trash Dick Records</h3>
-            <img src={TrashDickRecords} alt="Teenage Toad" loading='lazy' />
+            <img src={TrashDickRecords} alt="Trash Dick Records" loading='lazy' />
             <a href='https://trashdick.bandcamp.com/' target='_blank' rel='noopener noreferrer'>Bandcamp</a>
           </div>
           </div>
