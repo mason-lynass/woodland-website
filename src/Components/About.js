@@ -89,9 +89,9 @@ function About() {
             <a href='https://trashdick.bandcamp.com/' target='_blank' rel='noopener noreferrer'>Bandcamp</a>
           </div>
           </div>
-      <div id="tenants-flex">
+      {/* <div id="tenants-flex">
         New Tenants
-      </div>
+      </div> */}
       <div id='about-bottom'>
         <h4>
           Our studios are currently full, but if you would like to be
