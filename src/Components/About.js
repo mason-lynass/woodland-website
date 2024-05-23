@@ -1,9 +1,12 @@
 import '../CSS/About.css'
 
 import Mason from "../Images/mason-woodland.webp";
-import Lucas from "../Images/SocialIcon.webp"
-import Tom from "../Images/Eykemans.webp"
-import OldWoodland from "../Images/Woodland-Theater-1932.webp"
+import Lucas from "../Images/SocialIcon.webp";
+import Tom from "../Images/Eykemans.webp";
+import JamesMadson from "../Images/jm.jpg";
+import TeenageToad from "../Images/teenage-toad.jpg";
+import TrashDickRecords from "../Images/trash-dick-records.jpg";
+import OldWoodland from "../Images/Woodland-Theater-1932.webp";
 import MailingList from './MailingList';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
@@ -40,25 +43,65 @@ function About() {
             <h3>Lucas Fisher</h3>
             <img src={Lucas} alt="icon of Lucas" loading='lazy' />
             <p>
-              Lucas Fisher is a 3D artist, game developer, and musician. Having often worked in the intersection of disciplines, Woodland has been a fertile ground for experimentation and collaboration for him since 2017.
+              Lucas Fisher is a 3D artist, game developer, and musician. Having
+              often worked in the intersection of disciplines, Woodland has been a
+              fertile ground for experimentation and collaboration for him since
+              2017.
             </p>
           </div>
           <div className="one-tenant">
             <h3>Tom Eykemans</h3>
             <img src={Tom} alt="Tom with camera" loading='lazy' />
             <p>
-              Tom Eykemans is a book designer at Marquand Books, created the independent publishing imprint Tome Press, and co-founded the Seattle Art Book Fair. When not making books and zines and posters, he seeks ways to help build creative communities at Woodland Theater.
+              Tom Eykemans is a book designer at Marquand Books, created the
+              independent publishing imprint Tome Press, and co-founded the
+              Seattle Art Book Fair. When not making books and zines and posters,
+              he seeks ways to help build creative communities at Woodland Theater.
             </p>
-            <a href='design.eykemans.com' target='_blank' rel='noopener noreferrer'>design.eykemans.com</a>
+            <a href='https://design.eykemans.com/' target='_blank' rel='noopener noreferrer'>design.eykemans.com</a>
           </div>
         </div>
       </div>
+      <div id="tenants-flex">
+        <div className="one-tenant">
+            <h3>James Madson</h3>
+            <img src={JamesMadson} alt="James Madson" loading='lazy' />
+            <p>
+              James Madson is an independent digital designer and musician.
+              Joining Woodland in 2023 has provided a space to create and
+              contribute to a beautiful creative community.
+            </p>
+            <a href='https://jamesmadson.me/' target='_blank' rel='noopener noreferrer'>Website</a><br />
+            <a href='https://jamesmadson.bandcamp.com/' target='_blank' rel='noopener noreferrer'>Bandcamp</a>
+          </div>
+          <div className="one-tenant">
+            <h3>Teenage Toad</h3>
+            <img src={TeenageToad} alt="Teenage Toad" loading='lazy' />
+            <p>
+              Toads in your gutter, Slime in your hand; it's yr favorite
+              neighborhood junk rock band
+            </p>
+            <a href='https://teenagetoad.bandcamp.com/' target='_blank' rel='noopener noreferrer'>Bandcamp</a>
+          </div>
+          <div className="one-tenant">
+            <h3>Trash Dick Records</h3>
+            <img src={TrashDickRecords} alt="Trash Dick Records" loading='lazy' />
+            <a href='https://trashdick.bandcamp.com/' target='_blank' rel='noopener noreferrer'>Bandcamp</a>
+          </div>
+          </div>
+      <div id="tenants-flex">
+        New Tenants
+      </div>
       <div id='about-bottom'>
-        <h4>Our studios are currently full, but if you would like to be notified when a space is available, please email Woodland Theater to be added to the waiting list.</h4>
-        <MailchimpSubscribe 
+        <h4>
+          Our studios are currently full, but if you would like to be
+          notified when a space is available, please email Woodland
+          Theater to be added to the waiting list.
+        </h4>
+        <MailchimpSubscribe
           url={process.env.REACT_APP_MAILCHIMP_URL}
           render={({ subscribe, status, message }) => (
-              <MailingList 
+              <MailingList
               status={status}
               message={message}
               onSubmitted={formData => subscribe(formData)} />
