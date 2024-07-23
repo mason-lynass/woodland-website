@@ -12,7 +12,22 @@ function EventsList({ shows, bands }) {
         :
         <div className="one-show no-events">
         <div id='show-tags'>
-            <div id='band-links'><h3>no future events at the moment, stay tuned!</h3></div>
+            <div id='band-links'><h4 style={{textAlign: 'center'}}>
+            The easiest way to stay up to date about upcoming shows and events
+            is by{" "} 
+            <a id='IGlink'
+              href="https://www.instagram.com/woodlandtheater"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              following our Instagram page
+            </a>
+            .
+          </h4>
+          <h4 style={{textAlign: 'center'}}>
+            Check out the Instagram feed below for events coming up soon, and a
+            history of events in the past!
+          </h4></div>
         </div>
     </div>
     )

@@ -38,6 +38,10 @@
   margin: 1vw;
 }
 
+#homepage-events #IGlink {
+  color: rgb(2, 167, 158);
+}
+
 .one-event {
   display: flex;
   flex-flow: row nowrap;

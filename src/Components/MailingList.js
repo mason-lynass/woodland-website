@@ -17,6 +17,7 @@ function MailingList({ status, message, onSubmitted }) {
             <div id='mailing-list-copy'>
                 <h2>Stay Connected</h2>
                 <p>Sign up for our mailing list to hear about events, open spaces, and news.</p>
+                <p>(we hardly ever send emails so follow the Woodland Instagram too!)</p>
             </div>
             <div>
             <input type='email' id='mailing-list-address' placeholder="email address" ref={node => input = node}></input>

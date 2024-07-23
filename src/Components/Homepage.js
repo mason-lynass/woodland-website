@@ -19,11 +19,8 @@ function Homepage({ shows, bands, currentDate, sortedShows, futureShows, sanityL
       <section id='homepage-top'>
         <img id='peg-at-woodland' src={Peg} alt='Peg performing at the Woodland Theater' loading='lazy' />
         <HomepageEvents futureShows={futureShows} bands={bands} sanityLoaded={sanityLoaded}/>
-        {/* <div id="next-event">
-          <h2>Our next event:</h2>
-          <BigEvent show={futureShows[0]} bands={bands} sanityLoaded={sanityLoaded} />
-        </div> */}
       </section>
+      <IGGallery behold={behold} sanityLoaded={sanityLoaded} />
       <MailchimpSubscribe
         url={process.env.REACT_APP_MAILCHIMP_URL}
         render={({ subscribe, status, message }) => (
@@ -33,8 +30,6 @@ function Homepage({ shows, bands, currentDate, sortedShows, futureShows, sanityL
             onSubmitted={formData => subscribe(formData)} />
         )}
       />
-      <IGGallery behold={behold} sanityLoaded={sanityLoaded} />
-
     </main>
   );
 }
