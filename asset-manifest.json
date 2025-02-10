@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.eacc931c.css",
-    "main.js": "/static/js/main.859e3090.js",
-    "static/js/787.b97a9f3c.chunk.js": "/static/js/787.b97a9f3c.chunk.js",
+    "main.js": "/static/js/main.5f20dc73.js",
+    "static/js/453.6128bfbe.chunk.js": "/static/js/453.6128bfbe.chunk.js",
     "static/media/peg-at-woodland.webp": "/static/media/peg-at-woodland.75597ff78cce3de2dfc5.webp",
     "static/media/jm.jpg": "/static/media/jm.1cdd42fb50b3b14e075f.jpg",
     "static/media/teenage-toad.jpg": "/static/media/teenage-toad.a71de9b3cdf0da8675be.jpg",
@@ -15,11 +15,11 @@
     "static/media/instagram.svg": "/static/media/instagram.2964857818dad1b75fccf355259c5575.svg",
     "index.html": "/index.html",
     "main.eacc931c.css.map": "/static/css/main.eacc931c.css.map",
-    "main.859e3090.js.map": "/static/js/main.859e3090.js.map",
-    "787.b97a9f3c.chunk.js.map": "/static/js/787.b97a9f3c.chunk.js.map"
+    "main.5f20dc73.js.map": "/static/js/main.5f20dc73.js.map",
+    "453.6128bfbe.chunk.js.map": "/static/js/453.6128bfbe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eacc931c.css",
-    "static/js/main.859e3090.js"
+    "static/js/main.5f20dc73.js"
   ]
 }
