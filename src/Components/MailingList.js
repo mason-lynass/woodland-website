@@ -670,16 +670,12 @@ function MailingListForm() {
                                         about events, open spaces, and news.
                                     </p>
                                     <p>
-                                        (We hardly ever send emails so follow
-                                        the{' '}
-                                        <a
-                                            href='https://www.instagram.com/woodlandtheater'
-                                            target='_blank'
-                                            rel='noopener noreferrer'
-                                        >
-                                            Woodland Instagram
-                                        </a>{' '}
-                                        too!)
+                                        (To request a show at Woodland, please
+                                        fill out{' '}
+                                        <a href='https://forms.gle/H7XQjmM7R5fVCxez6'>
+                                            this form
+                                        </a>
+                                        )
                                     </p>
                                 </div>
                                 <form

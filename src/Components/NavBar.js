@@ -12,9 +12,6 @@ function NavBar() {
                     <Link id='music' to='/music'>
                         Music
                     </Link>
-                    <Link id='contact' to='https://subscribepage.io/8lvN24'>
-                        Contact
-                    </Link>
                 </div>
             </div>
             <Link id='to-home' to='/'>
