@@ -1,7 +1,7 @@
 import '../CSS/Homepage.css';
 import Peg from '../Images/peg-at-woodland.webp';
 
-import BigEvent from './BigEvent';
+// import BigEvent from './BigEvent';
 import MailingList from './MailingList';
 import IGGallery from './IGGallery';
 import HomepageEvents from './HomepageEvents';
