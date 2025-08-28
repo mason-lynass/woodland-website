@@ -29,7 +29,6 @@ function App() {
         fetch(beholdURL).then((res) => {
             if (res.ok) {
                 res.json().then((res) => {
-                    console.log(res)
                     setBehold(res);
                 });
             }
