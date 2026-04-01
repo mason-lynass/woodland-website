@@ -41,6 +41,61 @@
     background-color: white;
 }
 
+#music-controls {
+    width: 90%;
+    margin: 2vw auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#music-sort-view {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.music-toggle-btn {
+    background: none;
+    border: 2px solid rgb(2, 167, 158);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: rgb(41, 122, 122);
+    transition: background 0.15s, color 0.15s;
+}
+
+.music-toggle-btn:hover,
+.music-toggle-btn.active {
+    background: rgb(2, 167, 158);
+    color: white;
+}
+
+#all-of-the-bands.list-view {
+    display: flex;
+    flex-direction: column;
+    margin: 1vw 5vw;
+}
+
+#all-of-the-bands.list-view a {
+    width: auto;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(2, 167, 158, 0.3);
+    box-shadow: none;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+#all-of-the-bands.list-view a:hover {
+    border-radius: 0;
+    background-color: rgba(2, 167, 158, 0.05);
+}
+
 #music-search {
     width: 90%;
     margin: 2vw auto;
@@ -50,7 +105,7 @@
     gap: 5vw;
 }
 
-#music-search input {
+#music-controls input, #music-search input {
     width: 300px;
     height: 40px;
     padding: 10px 20px;

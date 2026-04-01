@@ -1,74 +1,110 @@
-import { useState, useEffect } from 'react'
-import '../CSS/Music.css'
+import { useState, useEffect } from 'react';
+import '../CSS/Music.css';
 
-function Music({ shows, bands, sanityLoaded }) {
+function Music({ bands, sanityLoaded }) {
+    const [pageBands, setPageBands] = useState(bands);
+    const [search, setSearch] = useState('');
+    const [sortDir, setSortDir] = useState('asc');
+    const [view, setView] = useState('grid');
 
-    // pageBands state needed for search capabilities - each time the search term changes, the pageBands are filtered
-    const [pageBands, setPageBands] = useState(bands)
-    const [search, setSearch] = useState("")
-
-    // to handle the initial page load
     useEffect(() => {
-        setPageBands(bands)
-    }, [bands])
+        setPageBands(bands);
+    }, [bands]);
 
-    // search logic
     useEffect(() => {
-        let result = bands
-        result = filterBySearch(result)
-        setPageBands(result)
-    }, [search])
+        let result = bands.filter((band) =>
+            band.name.toLowerCase().includes(search.toLowerCase())
+        );
+        setPageBands(result);
+    }, [search]); // eslint-disable-line react-hooks/exhaustive-deps
 
     function handleSearch(e) {
-        setSearch(e.target.value)
+        setSearch(e.target.value);
     }
 
-    const filterBySearch = (r) => {
-        return bands.filter((band) => band.name.toLowerCase().includes(search.toLowerCase()))
+    function randomBand() {
+        const band = Math.floor(Math.random() * bands.length);
+        return bands[band].description;
     }
 
-    const alphaSortBands = pageBands.sort((a, b) => a.name.localeCompare(b.name))
+    const sorted = [...pageBands].sort((a, b) => {
+        const cmp = a.name.localeCompare(b.name);
+        return sortDir === 'asc' ? cmp : -cmp;
+    });
 
-    function AllOfTheBands() {
-        return (
-            alphaSortBands.map((band) => {
-                return (
-                    <a className='band-link music-band' href={band.description} key={band._id} target='_blank' rel='noopener noreferrer'>
+    return sanityLoaded === false ? (
+        <h2 id="music-loading">loading...</h2>
+    ) : (
+        <main id="music-main">
+            <div id="music-top">
+                <h1>~ All of the bands ~</h1>
+                <div id="music-body">
+                    <h3>these are all of the bands that have played a show at Woodland since 2018.</h3>
+                    <h3>click on a band to check out their tunes!</h3>
+                </div>
+                <div id="music-controls">
+                    <input
+                        placeholder="search"
+                        onChange={handleSearch}
+                        value={search}
+                        type="text"
+                        name="search"
+                    />
+                    <div id="music-sort-view">
+                        <button
+                            className={`music-toggle-btn${sortDir === 'asc' ? ' active' : ''}`}
+                            onClick={() => setSortDir('asc')}
+                        >
+                            A → Z
+                        </button>
+                        <button
+                            className={`music-toggle-btn${sortDir === 'desc' ? ' active' : ''}`}
+                            onClick={() => setSortDir('desc')}
+                        >
+                            Z → A
+                        </button>
+                        <button
+                            className={`music-toggle-btn${view === 'grid' ? ' active' : ''}`}
+                            onClick={() => setView('grid')}
+                            aria-label="Grid view"
+                        >
+                            ⊞
+                        </button>
+                        <button
+                            className={`music-toggle-btn${view === 'list' ? ' active' : ''}`}
+                            onClick={() => setView('list')}
+                            aria-label="List view"
+                        >
+                            ☰
+                        </button>
+                        <a
+                            id="random-band"
+                            className="blue"
+                            href={randomBand()}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            random band
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="all-of-the-bands" className={view === 'list' ? 'list-view' : ''}>
+                {sorted.map((band) => (
+                    <a
+                        className="band-link music-band"
+                        href={band.description}
+                        key={band._id}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <h4>{band.name}</h4>
                     </a>
-                )
-            })
-        )
-    }
-
-    // randomly selecting a band from bands and returning a link to their Bandcamp/website
-    function randomBand() {
-        const band = Math.floor(Math.random() * bands.length)
-        return bands[band].description
-    }
-
-    return (
-        (sanityLoaded === false) ?
-            <h2 id='music-loading'>loading...</h2>
-            :
-            <main id='music-main'>
-                <div id='music-top'>
-                    <h1>~ All of the bands ~</h1>
-                    <div id='music-body'>
-                        <h3>these are all of the bands that have played a show at Woodland since 2018.</h3>
-                        <h3>click on a band to check out their tunes!</h3>
-                    </div>
-                    <div id='music-search'>
-                    <input placeholder='search' onChange={handleSearch} value={search} type="text" name="search"></input>
-                    <a id='random-band' className='blue' href={randomBand()} rel='noopener noreferrer' target='_blank'>show me a random band</a>
-                </div>
-                </div>
-                
-                <div id='all-of-the-bands'>
-                    {AllOfTheBands()}
-                </div>
-            </main>
-    )
+                ))}
+            </div>
+        </main>
+    );
 }
 
-export default Music
+export default Music;
