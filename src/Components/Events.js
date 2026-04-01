@@ -28,17 +28,15 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
     });
 
     return (
-        <div id="events-list">
-            <div className="events-table-header one-show">
-                <button className="sort-header" id="show-date" onClick={() => toggleSort('date')}>
+        <div className="events-table">
+            <div className="events-table-header">
+                <button className="sort-header" onClick={() => toggleSort('date')}>
                     Date{arrow('date')}
                 </button>
-                <div id="show-tags">
-                    <button className="sort-header" onClick={() => toggleSort('performers')}>
-                        Lineup{arrow('performers')}
-                    </button>
-                </div>
-                <button className="sort-header" id="show-categories" onClick={() => toggleSort('categories')}>
+                <button className="sort-header events-col-lineup" onClick={() => toggleSort('performers')}>
+                    Lineup{arrow('performers')}
+                </button>
+                <button className="sort-header" onClick={() => toggleSort('categories')}>
                     Category{arrow('categories')}
                 </button>
             </div>
@@ -50,6 +48,8 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
 }
 
 function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }) {
+    const totalWoodland = futureShows.length + pastShows.length;
+    const totalVenue = (pastVenueShows || []).length;
 
     return sanityLoaded === false ? (
         <h2 id="events-loading">loading...</h2>
@@ -63,7 +63,10 @@ function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }
                 <div id="future-events">
                     {futureShows.length > 0 ? (
                         <>
-                            <h2>Coming Soon:</h2>
+                            <div className="events-section-header">
+                                <h2>Coming Soon</h2>
+                                <span className="events-count">{futureShows.length} {futureShows.length === 1 ? 'event' : 'events'}</span>
+                            </div>
                             <EventsTable shows={futureShows} defaultSort="date-asc" />
                         </>
                     ) : (
@@ -88,21 +91,23 @@ function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }
                 <MailingList />
 
                 <div id="past-events">
-                    <h3>past events at Woodland Theater:</h3>
+                    <div className="events-section-header">
+                        <h3>Past Events at Woodland Theater</h3>
+                        <span className="events-count">{totalWoodland} {totalWoodland === 1 ? 'event' : 'events'}</span>
+                    </div>
                     {pastShows.length > 0 ? (
                         <EventsTable shows={pastShows} defaultSort="date-desc" />
                     ) : (
-                        <div className="one-show no-events">
-                            <div id="show-tags">
-                                <div id="band-links"><h3>no past events yet!</h3></div>
-                            </div>
-                        </div>
+                        <p style={{ textAlign: 'center' }}>No past events yet.</p>
                     )}
                 </div>
 
-                {pastVenueShows.length > 0 && (
+                {pastVenueShows && pastVenueShows.length > 0 && (
                     <div id="past-events">
-                        <h3>past events at The Josephine &amp; The Chummery:</h3>
+                        <div className="events-section-header">
+                            <h3>Past Events at The Josephine &amp; The Chummery</h3>
+                            <span className="events-count">{totalVenue} {totalVenue === 1 ? 'event' : 'events'}</span>
+                        </div>
                         <EventsTable shows={pastVenueShows} defaultSort="date-desc" />
                     </div>
                 )}

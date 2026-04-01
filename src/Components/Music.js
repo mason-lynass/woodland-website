@@ -41,6 +41,7 @@ function Music({ bands, sanityLoaded }) {
                 <div id="music-body">
                     <h3>these are all of the bands that have played a show at Woodland since 2018.</h3>
                     <h3>click on a band to check out their tunes!</h3>
+                    <p style={{ color: 'rgb(100,100,100)', marginTop: '4px' }}>{bands.length} bands</p>
                 </div>
                 <div id="music-controls">
                     <input

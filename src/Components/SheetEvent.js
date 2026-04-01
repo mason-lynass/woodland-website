@@ -10,41 +10,28 @@ function SheetEvent({ show }) {
         return `${day} ${formatted}`;
     }
 
+    const lineupText = show_title
+        ? `${show_title}${performers.length > 0 ? ' — ' + performers.join(', ') : ''}`
+        : performers.join(', ');
+
     return (
-        <div className="one-show">
-            <h4 id="show-date">{formatDate(date)}</h4>
-            <div id="show-tags">
-                {show_title && (
-                    <div id="show-title">
-                        <h4>{show_title}</h4>
-                    </div>
-                )}
-                <div id="band-links">
-                    {performers.length > 0 ? (
-                        performers.map((name) => (
-                            <span key={name} className="event-performer">
-                                {name}
-                            </span>
-                        ))
-                    ) : (
-                        <h4 style={{ margin: '0 2vw' }}>Show</h4>
-                    )}
-                </div>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', marginLeft: 'auto', flexShrink: 0 }}>
-                <h4 id="show-categories">{categories}</h4>
+        <div className="events-row">
+            <div className="events-col-date">{formatDate(date)}</div>
+            <div className="events-col-lineup">
+                {lineupText || 'Show'}
                 {ticket_link && (
                     <a
                         href={ticket_link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="event-band-link"
-                        style={{ fontSize: '0.8rem' }}
+                        className="ticket-link"
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        Tickets
+                        Tickets ↗
                     </a>
                 )}
             </div>
+            <div className="events-col-category">{categories}</div>
         </div>
     );
 }
