@@ -55,13 +55,21 @@ export async function fetchSheetEvents(sheetUrl) {
             description: row['Description'] || '',
             categories: row['Category'] || '',
             ticket_link: row['Ticket Link'] || '',
+            venue: row['Venue Name'] || 'Woodland Theater',
         }))
         .sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
 
-    const futureShows = shows.filter((s) => Date.parse(s.date) >= now);
-    const pastShows = [...shows]
+    const woodlandShows = shows.filter((s) => !s.venue || s.venue === 'Woodland Theater');
+    const otherVenueShows = shows.filter((s) => s.venue && s.venue !== 'Woodland Theater');
+
+    const futureShows = woodlandShows.filter((s) => Date.parse(s.date) >= now);
+    const pastShows = [...woodlandShows]
         .filter((s) => Date.parse(s.date) < now)
         .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 
-    return { futureShows, pastShows };
+    const pastVenueShows = [...otherVenueShows]
+        .filter((s) => Date.parse(s.date) < now)
+        .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+
+    return { futureShows, pastShows, pastVenueShows };
 }

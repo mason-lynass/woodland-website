@@ -20,8 +20,8 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
     const sorted = [...shows].sort((a, b) => {
         if (sort === 'date-asc') return Date.parse(a.date) - Date.parse(b.date);
         if (sort === 'date-desc') return Date.parse(b.date) - Date.parse(a.date);
-        if (sort === 'performers-asc') return a.performers[0]?.localeCompare(b.performers[0] || '') || 0;
-        if (sort === 'performers-desc') return b.performers[0]?.localeCompare(a.performers[0] || '') || 0;
+        if (sort === 'performers-asc') return (a.performers[0] || '').localeCompare(b.performers[0] || '');
+        if (sort === 'performers-desc') return (b.performers[0] || '').localeCompare(a.performers[0] || '');
         if (sort === 'categories-asc') return a.categories.localeCompare(b.categories);
         if (sort === 'categories-desc') return b.categories.localeCompare(a.categories);
         return 0;
@@ -49,7 +49,15 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
     );
 }
 
-function Events({ sanityLoaded, futureShows, pastShows, behold }) {
+function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }) {
+    // Group past venue shows by venue name
+    const venueGroups = (pastVenueShows || []).reduce((acc, show) => {
+        const v = show.venue || 'Other';
+        if (!acc[v]) acc[v] = [];
+        acc[v].push(show);
+        return acc;
+    }, {});
+
     return sanityLoaded === false ? (
         <h2 id="events-loading">loading...</h2>
     ) : (
@@ -87,7 +95,7 @@ function Events({ sanityLoaded, futureShows, pastShows, behold }) {
                 <MailingList />
 
                 <div id="past-events">
-                    <h3>past events:</h3>
+                    <h3>past events at Woodland Theater:</h3>
                     {pastShows.length > 0 ? (
                         <EventsTable shows={pastShows} defaultSort="date-desc" />
                     ) : (
@@ -98,6 +106,13 @@ function Events({ sanityLoaded, futureShows, pastShows, behold }) {
                         </div>
                     )}
                 </div>
+
+                {Object.entries(venueGroups).map(([venue, shows]) => (
+                    <div key={venue} id="past-events">
+                        <h3>past events at {venue}:</h3>
+                        <EventsTable shows={shows} defaultSort="date-desc" />
+                    </div>
+                ))}
             </section>
         </main>
     );

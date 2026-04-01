@@ -25,6 +25,7 @@ function App() {
     const [behold, setBehold] = useState({});
     const [futureShows, setFutureShows] = useState([]);
     const [pastShows, setPastShows] = useState([]);
+    const [pastVenueShows, setPastVenueShows] = useState([]);
 
     useEffect(() => {
         fetch(beholdURL).then((res) => {
@@ -36,9 +37,10 @@ function App() {
         });
 
         fetchSheetEvents(sheetURL)
-            .then(({ futureShows, pastShows }) => {
+            .then(({ futureShows, pastShows, pastVenueShows }) => {
                 setFutureShows(futureShows);
                 setPastShows(pastShows);
+                setPastVenueShows(pastVenueShows);
                 setSheetLoaded(true);
             })
             .catch(() => setSheetLoaded(true));
@@ -68,6 +70,7 @@ function App() {
                             sanityLoaded={sheetLoaded}
                             futureShows={futureShows}
                             pastShows={pastShows}
+                            pastVenueShows={pastVenueShows}
                             behold={behold}
                         />
                     }
