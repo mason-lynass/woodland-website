@@ -50,9 +50,11 @@
 #show-date,
 #show-categories {
     margin: 0;
-    width: 10vw;
+    width: 11vw;
+    min-width: 90px;
     flex-shrink: 0;
     text-align: center;
+    font-size: calc((1.7 - 1) * 1.2vw + .5rem);
 }
 
 #show-categories {
@@ -92,6 +94,12 @@
 
 .event-band-link:hover {
     color: rgb(2, 167, 158);
+}
+
+.event-performer {
+    margin: 0 2vw;
+    font-size: calc((1.7 - 1) * 1.2vw + .55rem);
+    display: inline-block;
 }
 
 .one-show #show-tags #band-links {

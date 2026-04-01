@@ -4,7 +4,10 @@ function SheetEvent({ show }) {
     function formatDate(input) {
         const pattern = /(\d{4})-(\d{2})-(\d{2})/;
         if (!input || !input.match(pattern)) return null;
-        return input.replace(pattern, '$2/$3/$1');
+        const d = new Date(input + 'T12:00:00');
+        const day = d.toLocaleDateString('en-US', { weekday: 'short' });
+        const formatted = input.replace(pattern, '$2/$3/$1');
+        return `${day} ${formatted}`;
     }
 
     return (
@@ -19,7 +22,7 @@ function SheetEvent({ show }) {
                 <div id="band-links">
                     {performers.length > 0 ? (
                         performers.map((name) => (
-                            <span key={name} className="event-band-link" style={{ cursor: 'default' }}>
+                            <span key={name} className="event-performer">
                                 {name}
                             </span>
                         ))
@@ -28,7 +31,7 @@ function SheetEvent({ show }) {
                     )}
                 </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', marginLeft: 'auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', marginLeft: 'auto', flexShrink: 0 }}>
                 <h4 id="show-categories">{categories}</h4>
                 {ticket_link && (
                     <a

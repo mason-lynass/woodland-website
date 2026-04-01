@@ -30,7 +30,7 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
     return (
         <div id="events-list">
             <div className="events-table-header one-show">
-                <button className="sort-header" onClick={() => toggleSort('date')}>
+                <button className="sort-header" id="show-date" onClick={() => toggleSort('date')}>
                     Date{arrow('date')}
                 </button>
                 <div id="show-tags">
@@ -38,7 +38,7 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
                         Lineup{arrow('performers')}
                     </button>
                 </div>
-                <button className="sort-header" onClick={() => toggleSort('categories')}>
+                <button className="sort-header" id="show-categories" onClick={() => toggleSort('categories')}>
                     Category{arrow('categories')}
                 </button>
             </div>
