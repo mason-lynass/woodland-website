@@ -33,30 +33,6 @@ p {
 body {
   margin: 0;
   background-color: rgba(41, 122, 122, 0.1);
-  color: #111;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #e8e8e8;
-  }
-
-  h1, h2, h3, h4, p, a {
-    color: #e8e8e8;
-  }
-
-  a {
-    color: #5ececa;
-  }
-
-  .event-band-link {
-    color: #5ececa;
-  }
-
-  .event-band-link:hover {
-    color: rgb(2, 167, 158);
-  }
 }
 
 @media screen and (max-width: 600px) {
