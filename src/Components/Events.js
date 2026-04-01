@@ -50,13 +50,6 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
 }
 
 function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }) {
-    // Group past venue shows by venue name
-    const venueGroups = (pastVenueShows || []).reduce((acc, show) => {
-        const v = show.venue || 'Other';
-        if (!acc[v]) acc[v] = [];
-        acc[v].push(show);
-        return acc;
-    }, {});
 
     return sanityLoaded === false ? (
         <h2 id="events-loading">loading...</h2>
@@ -107,12 +100,12 @@ function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }
                     )}
                 </div>
 
-                {Object.entries(venueGroups).map(([venue, shows]) => (
-                    <div key={venue} id="past-events">
-                        <h3>past events at {venue}:</h3>
-                        <EventsTable shows={shows} defaultSort="date-desc" />
+                {pastVenueShows.length > 0 && (
+                    <div id="past-events">
+                        <h3>past events at The Josephine &amp; The Chummery:</h3>
+                        <EventsTable shows={pastVenueShows} defaultSort="date-desc" />
                     </div>
-                ))}
+                )}
             </section>
         </main>
     );
