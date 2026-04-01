@@ -9,6 +9,9 @@ function NavBar() {
                     <Link id='about' to='/about'>
                         About
                     </Link>
+                    <Link id='events' to='/events'>
+                        Events
+                    </Link>
                     <Link id='music' to='/music'>
                         Music
                     </Link>
