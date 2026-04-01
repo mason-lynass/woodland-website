@@ -19,7 +19,8 @@
 #nav-container {
   position: sticky;
   top: 0;
-  padding-bottom: 80px; 
+  padding-bottom: 80px;
+  z-index: 10;
 }
 
 #nav-flex {

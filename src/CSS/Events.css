@@ -55,7 +55,7 @@
     background: rgba(240, 253, 252, 0.95);
     position: sticky;
     top: 80px;
-    z-index: 2;
+    z-index: 5;
 }
 
 .events-row:hover {
