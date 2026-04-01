@@ -1,27 +1,15 @@
-// Fetches and parses events from a publicly published Google Sheet CSV.
+// Fetches and parses events from the published Woodland Google Sheet CSV.
 //
-// To set up your sheet:
-// 1. Create a Google Sheet with these columns (row 1 = headers):
-//    Date | Title | Performers | Description | Categories | Ticket Link
-//
-//    - Date: YYYY-MM-DD (e.g. 2026-05-15)
-//    - Title: optional show title
-//    - Performers: comma-separated names (e.g. "Band One, Band Two")
-//    - Description: optional short description
-//    - Categories: optional (e.g. "music", "workshop")
-//    - Ticket Link: optional URL
-//
-// 2. File → Share → Publish to web → Sheet1 → CSV → Publish
-// 3. Copy the URL into REACT_APP_GOOGLE_SHEET_URL in .env
+// Expected columns:
+//   Show Date | Show Title / Lineup | Show Title | Description | Ticket Link | Category | Status | Venue Name | Source
 
 function parseCSV(text) {
     const lines = text.trim().split('\n');
     if (lines.length < 2) return [];
 
-    const headers = lines[0].split(',').map((h) => h.trim().toLowerCase().replace(/\s+/g, '_'));
+    const headers = lines[0].split(',').map((h) => h.trim());
 
     return lines.slice(1).map((line) => {
-        // Handle quoted fields that may contain commas
         const values = [];
         let current = '';
         let inQuotes = false;
@@ -56,17 +44,17 @@ export async function fetchSheetEvents(sheetUrl) {
     const now = Date.now();
 
     const shows = rows
-        .filter((row) => row.date)
+        .filter((row) => row['Show Date'])
         .map((row, i) => ({
             id: `sheet-${i}`,
-            date: row.date,
-            show_title: row.title || '',
-            performers: row.performers
-                ? row.performers.split(',').map((p) => p.trim()).filter(Boolean)
+            date: row['Show Date'],
+            show_title: row['Show Title'] || '',
+            performers: row['Show Title / Lineup']
+                ? row['Show Title / Lineup'].split(',').map((p) => p.trim()).filter(Boolean)
                 : [],
-            description: row.description || '',
-            categories: row.categories || '',
-            ticket_link: row.ticket_link || '',
+            description: row['Description'] || '',
+            categories: row['Category'] || '',
+            ticket_link: row['Ticket Link'] || '',
         }))
         .sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
 
