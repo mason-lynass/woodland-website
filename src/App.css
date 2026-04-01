@@ -10,10 +10,24 @@
   bottom: 0;
   right: 0;
   margin: auto;
-  /* transform: translate(-50%, 0); */
   width: calc(160px * 2);
   height: 160px;
   background: transparent;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+#nav-container.scrolled #logo {
+  width: 80px;
+  height: 40px;
+  opacity: 0.85;
+}
+
+#nav-container.scrolled {
+  padding-bottom: 40px;
+}
+
+#nav-container {
+  transition: padding-bottom 0.3s ease;
 }
 
 #nav-container {
