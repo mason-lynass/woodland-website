@@ -101,6 +101,9 @@ function Music({ bands, sanityLoaded }) {
                         rel="noopener noreferrer"
                     >
                         <h4>{band.name}</h4>
+                        {view === 'list' && band.description && (
+                            <span className="band-url">{band.description.replace(/^https?:\/\//, '')}</span>
+                        )}
                     </a>
                 ))}
             </div>

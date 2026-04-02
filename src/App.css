@@ -13,21 +13,19 @@
   width: calc(160px * 2);
   height: 160px;
   background: transparent;
-  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+/* When scrolled: logo shrinks to sit inside the nav bar */
+#nav-container.scrolled {
+  padding-bottom: 0;
 }
 
 #nav-container.scrolled #logo {
-  width: 80px;
-  height: 40px;
-  opacity: 0.85;
-}
-
-#nav-container.scrolled {
-  padding-bottom: 40px;
-}
-
-#nav-container {
-  transition: padding-bottom 0.3s ease;
+  width: auto;
+  height: 44px;
+  top: 0;
+  bottom: 0;
 }
 
 #nav-container {
@@ -35,6 +33,7 @@
   top: 0;
   padding-bottom: 80px;
   z-index: 10;
+  transition: padding-bottom 0.3s ease;
 }
 
 #nav-flex {
@@ -160,11 +159,6 @@ main h2 {
 }
 
 @media screen and (max-width: 1100px) {
-  #logo {
-    width: calc(2 * (160px + .1 * (100vw - 1100px)));
-    height: calc(160px + .1 * (100vw - 1100px));
-  }
-
   .IGGallery-pic {
     width: 27vw;
     height: 27vw;
@@ -189,13 +183,8 @@ main h2 {
     gap: 20px;
   }
 
-  #nav-container {
-    padding-bottom: 60px;
-  }
-
-  #logo { 
-    width: calc(2 * (100px + .1 * (100vw - 600px)));
-    height: calc(100px + .1 * (100vw - 600px));
+  #logo {
+    height: 50px;
   }
 
   #nav-links {
