@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom'; // eslint-disable-line no-unused-vars
 import Logo from '../Images/WoodlandTheater_Logo_200px_height.webp';
 import { useEffect, useState } from 'react';
 
@@ -17,9 +17,9 @@ function NavBar() {
         <div id='nav-container' className={scrolled ? 'scrolled' : ''}>
             <div id='nav-flex' className='blue'>
                 <div id='nav-links'>
-                    <Link id='about' to='/about'>About</Link>
-                    <Link id='events' to='/events'>Events</Link>
-                    <Link id='music' to='/music'>Music</Link>
+                    <NavLink className="nav-link" to='/about'>About</NavLink>
+                    <NavLink className="nav-link" to='/events'>Events</NavLink>
+                    <NavLink className="nav-link" to='/music'>Music</NavLink>
                 </div>
             </div>
             <Link id='to-home' to='/'>
