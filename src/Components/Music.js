@@ -45,7 +45,7 @@ function Music({ bands, sanityLoaded }) {
                 </div>
                 <div id="music-controls">
                     <input
-                        placeholder="search"
+                        placeholder="Search"
                         onChange={handleSearch}
                         value={search}
                         type="text"
@@ -85,7 +85,7 @@ function Music({ bands, sanityLoaded }) {
                             rel="noopener noreferrer"
                             target="_blank"
                         >
-                            random band
+                            Random Band
                         </a>
                     </div>
                 </div>

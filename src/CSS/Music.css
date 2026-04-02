@@ -26,6 +26,7 @@
 
 #music-top {
     text-align: center;
+    width: 100%;
 }
 
 #music-top h1 {
@@ -34,16 +35,19 @@
 
 #music-body {
     width: 100%;
+    box-sizing: border-box;
     font-size: calc((2 - 1) * 1.2vw + .5rem);
     background-image: linear-gradient(to bottom, rgba(41, 122, 122, 0.1), rgb(255, 255, 255, 1), rgb(255, 255, 255, 1), rgb(255, 255, 255, 1), rgba(41, 122, 122, 0.1));
-    margin: 0 auto;
-    padding: 2vw;
+    margin: 0;
+    padding: 2vw 4vw;
     background-color: white;
 }
 
 #music-controls {
-    width: 90%;
-    margin: 2vw auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 1.5vw 0;
+    padding: 0 4vw;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
