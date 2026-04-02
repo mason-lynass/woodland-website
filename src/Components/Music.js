@@ -1,18 +1,39 @@
 import { useState, useEffect } from 'react';
 import '../CSS/Music.css';
 
-function Music({ bands, sanityLoaded }) {
-    const [pageBands, setPageBands] = useState(bands);
+function Music({ bands, futureShows, pastShows, pastVenueShows, sanityLoaded }) {
+    // Merge Sanity bands with performers from event sheets
+    const allBands = (() => {
+        const sanityNameSet = new Set(bands.map((b) => b.name.toLowerCase()));
+        const allShows = [...(futureShows || []), ...(pastShows || []), ...(pastVenueShows || [])];
+        const extra = [];
+        const seen = new Set(sanityNameSet);
+        allShows.forEach((show) => {
+            show.performers.forEach((name) => {
+                if (!seen.has(name.toLowerCase())) {
+                    seen.add(name.toLowerCase());
+                    extra.push({
+                        _id: `event-${name}`,
+                        name,
+                        description: `https://duckduckgo.com/?q=${encodeURIComponent(name + ' band')}`,
+                    });
+                }
+            });
+        });
+        return [...bands, ...extra];
+    })();
+
+    const [pageBands, setPageBands] = useState(allBands);
     const [search, setSearch] = useState('');
     const [sortDir, setSortDir] = useState('asc');
     const [view, setView] = useState('grid');
 
     useEffect(() => {
-        setPageBands(bands);
-    }, [bands]);
+        setPageBands(allBands);
+    }, [bands, futureShows, pastShows, pastVenueShows]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
-        let result = bands.filter((band) =>
+        let result = allBands.filter((band) =>
             band.name.toLowerCase().includes(search.toLowerCase())
         );
         setPageBands(result);
@@ -23,8 +44,8 @@ function Music({ bands, sanityLoaded }) {
     }
 
     function randomBand() {
-        const band = Math.floor(Math.random() * bands.length);
-        return bands[band].description;
+        const band = Math.floor(Math.random() * allBands.length);
+        return allBands[band].description;
     }
 
     const sorted = [...pageBands].sort((a, b) => {
@@ -39,9 +60,9 @@ function Music({ bands, sanityLoaded }) {
             <div id="music-top">
                 <h1>~ All of the bands ~</h1>
                 <div id="music-body">
-                    <h3>these are all of the bands that have played a show at Woodland since 2018.</h3>
-                    <h3>click on a band to check out their tunes!</h3>
-                    <p style={{ color: 'rgb(100,100,100)', marginTop: '4px' }}>{bands.length} bands</p>
+                    <h3>These are all of the bands that have played a show at Woodland since 2006.</h3>
+                    <h3>Click on a band to check out their tunes!</h3>
+                    <p style={{ color: 'rgb(100,100,100)', marginTop: '4px' }}>{allBands.length} bands</p>
                 </div>
                 <div id="music-controls">
                     <input
@@ -102,7 +123,11 @@ function Music({ bands, sanityLoaded }) {
                     >
                         <h4>{band.name}</h4>
                         {view === 'list' && band.description && (
-                            <span className="band-url">{band.description.replace(/^https?:\/\//, '')}</span>
+                            <span className="band-url">
+                                {band._id.startsWith('event-')
+                                    ? 'search →'
+                                    : band.description.replace(/^https?:\/\//, '')}
+                            </span>
                         )}
                     </a>
                 ))}

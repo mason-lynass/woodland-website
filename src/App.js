@@ -80,6 +80,9 @@ function App() {
                     element={
                         <Music
                             bands={bands}
+                            futureShows={futureShows}
+                            pastShows={pastShows}
+                            pastVenueShows={pastVenueShows}
                             sanityLoaded={sheetLoaded}
                         />
                     }
