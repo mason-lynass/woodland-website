@@ -29,7 +29,7 @@ function App() {
 
     useEffect(() => {
         fetch(beholdURL).then((res) => {
-            if (res.ok) res.json().then((res) => setBehold(res));
+            if (res.ok) res.json().then((res) => setBehold(res.posts));
         });
 
         fetch(bandURL).then((res) => {
