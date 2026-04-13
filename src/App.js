@@ -29,7 +29,7 @@ function App() {
         fetch(beholdURL).then((res) => {
             if (res.ok) {
                 res.json().then((res) => {
-                    setBehold(res);
+                    setBehold(res.posts);
                 });
             }
         });
