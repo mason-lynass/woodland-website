@@ -16,25 +16,20 @@ function SheetEvent({ show }) {
                 {formatDate(date)}
                 {start_time && <span className="events-time">{start_time}</span>}
             </div>
-            <div className="events-col-title">
-                {show_title ? <strong>{show_title}</strong> : <span className="events-no-title">—</span>}
+            <div className="events-col-show">
+                {show_title && <strong>{show_title}</strong>}
+                {show_title && performers.length > 0 && ': '}
+                {performers.length > 0 && performers.join(', ')}
+                {!show_title && performers.length === 0 && <span className="events-no-title">—</span>}
             </div>
-            <div className="events-col-lineup">
-                <span className="events-lineup-text">
-                    {performers.length > 0 ? performers.join(', ') : <span className="events-no-title">—</span>}
-                </span>
-                {description && <span className="events-description">{description}</span>}
-                {ticket_link && (
-                    <a
-                        href={ticket_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ticket-link"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        Tickets ↗
-                    </a>
-                )}
+            <div className="events-col-description">
+                {description || <span className="events-no-title">—</span>}
+            </div>
+            <div className="events-col-ticket">
+                {ticket_link
+                    ? <a href={ticket_link} target="_blank" rel="noopener noreferrer" className="ticket-link" onClick={(e) => e.stopPropagation()}>Tickets ↗</a>
+                    : <span className="events-no-title">—</span>
+                }
             </div>
             <div className="events-col-category">
                 {cost && <span className="events-cost">{cost}</span>}

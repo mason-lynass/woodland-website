@@ -41,8 +41,8 @@
 .events-table-header,
 .events-row {
     display: grid;
-    grid-template-columns: 160px 200px 1fr 130px;
-    gap: 20px;
+    grid-template-columns: 150px 1fr 1fr 110px;
+    gap: 16px;
     align-items: start;
     padding: 10px 2vw;
     border-top: 1px solid #ccc;
@@ -84,7 +84,7 @@
     flex-shrink: 0;
 }
 
-.events-col-title {
+.events-col-show {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -94,19 +94,16 @@
     color: rgb(180, 180, 180);
 }
 
-.events-col-lineup {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    overflow: hidden;
-}
-
-.events-description {
-    font-size: 0.8rem;
+.events-col-description {
+    font-size: 0.85rem;
     color: rgb(100, 100, 100);
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.events-col-ticket {
+    display: none;
 }
 
 .events-col-category {
@@ -137,15 +134,18 @@
 }
 
 .ticket-link {
-    font-size: 0.75rem;
-    color: rgb(2, 167, 158);
+    display: inline-block;
+    font-size: 0.9rem;
+    color: white;
+    background: rgb(2, 167, 158);
     text-decoration: none;
     white-space: nowrap;
-    flex-shrink: 0;
+    padding: 4px 12px;
+    border-radius: 20px;
 }
 
 .ticket-link:hover {
-    text-decoration: underline;
+    background: rgb(41, 122, 122);
 }
 
 
@@ -182,9 +182,14 @@
 @media screen and (max-width: 1000px) {
     .events-table-header,
     .events-row {
-        grid-template-columns: 150px 160px 1fr 110px;
-        gap: 14px;
+        grid-template-columns: 140px 1fr 1fr 70px;
+        gap: 12px;
         padding: 10px 3vw;
+    }
+
+    .events-col-category,
+    .sort-header:last-child {
+        display: none;
     }
 
     .events-section-header {
@@ -204,10 +209,10 @@
         padding: 0 4vw;
     }
 
-    .events-col-title,
-    .events-col-category,
-    .sort-header:nth-child(2),
-    .sort-header:last-child {
+    .events-col-description,
+    .events-col-ticket,
+    .sort-header:nth-child(3),
+    .sort-header:nth-child(4) {
         display: none;
     }
 }

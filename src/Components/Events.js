@@ -35,10 +35,10 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
                     Date{arrow('date')}
                 </button>
                 <button className="sort-header" onClick={() => toggleSort('title')}>
-                    Title{arrow('title')}
+                    Show{arrow('title')}
                 </button>
-                <button className="sort-header" onClick={() => toggleSort('performers')}>
-                    Lineup{arrow('performers')}
+                <button className="sort-header">
+                    Description
                 </button>
                 <button className="sort-header events-col-category" onClick={() => toggleSort('categories')}>
                     Category{arrow('categories')}
@@ -55,9 +55,7 @@ function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }
     const totalWoodland = futureShows.length + pastShows.length;
     const totalVenue = (pastVenueShows || []).length;
 
-    return sanityLoaded === false ? (
-        <h2 id="events-loading">loading...</h2>
-    ) : (
+    return (
         <main id="events-main">
             <div id="events-top">
                 <h1 id="events-title">Events at Woodland</h1>

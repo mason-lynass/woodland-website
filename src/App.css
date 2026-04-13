@@ -99,8 +99,9 @@ main h2 {
 
 #mailing-list {
   text-align: center;
-  max-width: 550px;
-  margin: 20px auto;
+  width: calc(100% - 8vw);
+  box-sizing: border-box;
+  margin: 20px 4vw 60px;
   padding: 20px;
   background-color: white;
   border: 12px solid transparent;
@@ -162,14 +163,8 @@ main h2 {
   width: 50px;
 }
 
-#4culture-footer img {
-  height: 50px;
-  width: auto;
-  opacity: 0.85;
-}
-
-#4culture-footer:hover img {
-  opacity: 1;
+#4culture-footer {
+  display: none;
 }
 
 #footer-flex {

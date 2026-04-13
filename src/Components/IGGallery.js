@@ -25,7 +25,6 @@ function IGGallery({ behold, sanityLoaded }) {
 
     return (
         <section id='IGGallery'>
-            <h2>From the Woodland Instagram feed:</h2>
             <div id='IGGallery-all-pics'>
                 {isLoaded
                     ? behold.map((item) => <IGPhoto key={item.id} item={item} />)

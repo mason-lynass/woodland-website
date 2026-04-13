@@ -23,6 +23,7 @@
   width: 30vw;
   max-width: 600px;
   min-width: 300px;
+  border-radius: 10px;
 }
 
 #homepage-events {
