@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import SheetEvent from './SheetEvent';
-import MailingList from './MailingList';
 import IGGallery from './IGGallery';
 import '../CSS/Events.css';
 
@@ -20,6 +19,8 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
     const sorted = [...shows].sort((a, b) => {
         if (sort === 'date-asc') return Date.parse(a.date) - Date.parse(b.date);
         if (sort === 'date-desc') return Date.parse(b.date) - Date.parse(a.date);
+        if (sort === 'title-asc') return (a.show_title || '').localeCompare(b.show_title || '');
+        if (sort === 'title-desc') return (b.show_title || '').localeCompare(a.show_title || '');
         if (sort === 'performers-asc') return (a.performers[0] || '').localeCompare(b.performers[0] || '');
         if (sort === 'performers-desc') return (b.performers[0] || '').localeCompare(a.performers[0] || '');
         if (sort === 'categories-asc') return a.categories.localeCompare(b.categories);
@@ -33,10 +34,13 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
                 <button className="sort-header" onClick={() => toggleSort('date')}>
                     Date{arrow('date')}
                 </button>
-                <button className="sort-header events-col-lineup" onClick={() => toggleSort('performers')}>
+                <button className="sort-header" onClick={() => toggleSort('title')}>
+                    Title{arrow('title')}
+                </button>
+                <button className="sort-header" onClick={() => toggleSort('performers')}>
                     Lineup{arrow('performers')}
                 </button>
-                <button className="sort-header" onClick={() => toggleSort('categories')}>
+                <button className="sort-header events-col-category" onClick={() => toggleSort('categories')}>
                     Category{arrow('categories')}
                 </button>
             </div>
@@ -60,6 +64,8 @@ function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }
             </div>
 
             <section id="all-events">
+                <IGGallery behold={behold} sanityLoaded={sanityLoaded} />
+
                 <div id="future-events">
                     {futureShows.length > 0 ? (
                         <>
@@ -86,9 +92,6 @@ function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }
                         </div>
                     )}
                 </div>
-
-                <IGGallery behold={behold} sanityLoaded={sanityLoaded} />
-                <MailingList />
 
                 <div id="past-events">
                     <div className="events-section-header">

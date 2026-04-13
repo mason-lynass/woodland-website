@@ -1,4 +1,5 @@
 import IG from "../Images/instagram.svg"
+import FourCulture from "../Images/4culture-logo-white.png"
 
 function Footer() {
     return (
@@ -11,6 +12,10 @@ function Footer() {
 
             <a id='IGFooter' href='https://www.instagram.com/woodlandtheater/' target='_blank' rel='noopener noreferrer'>
                 <img src={IG} alt='link to Woodland Theater Instagram' />
+            </a>
+
+            <a href='https://www.4culture.org' target='_blank' rel='noopener noreferrer' id='4culture-footer'>
+                <img src={FourCulture} alt='4Culture' />
             </a>
             {/* <div id='footer-flex'>
                 <p>608 NW 65th St - Seattle, WA 98117</p>

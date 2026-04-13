@@ -41,9 +41,9 @@
 .events-table-header,
 .events-row {
     display: grid;
-    grid-template-columns: 160px 1fr 130px;
+    grid-template-columns: 160px 200px 1fr 130px;
     gap: 20px;
-    align-items: center;
+    align-items: start;
     padding: 10px 2vw;
     border-top: 1px solid #ccc;
     position: relative;
@@ -54,10 +54,14 @@
 .events-table-header {
     border-top: none;
     border-bottom: 1px solid #ccc;
-    background: rgba(240, 253, 252, 0.95);
+    background: white;
     position: sticky;
     top: 76px;
     z-index: 5;
+}
+
+.events-row:last-child {
+    border-bottom: 1px solid #ccc;
 }
 
 .events-row:hover {
@@ -80,11 +84,29 @@
     flex-shrink: 0;
 }
 
+.events-col-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.events-no-title {
+    color: rgb(180, 180, 180);
+}
+
 .events-col-lineup {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    gap: 4px;
     overflow: hidden;
+}
+
+.events-description {
+    font-size: 0.8rem;
+    color: rgb(100, 100, 100);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .events-col-category {
@@ -92,6 +114,26 @@
     font-size: 0.9rem;
     color: rgb(100, 100, 100);
     flex-shrink: 0;
+}
+
+.events-time {
+    display: block;
+    font-size: 0.75rem;
+    color: rgb(100, 100, 100);
+    margin-top: 2px;
+}
+
+.events-cost {
+    display: block;
+    font-size: 0.75rem;
+    color: rgb(100, 100, 100);
+    margin-bottom: 2px;
+}
+
+.events-lineup-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .ticket-link {
@@ -137,26 +179,47 @@
     color: rgb(41, 122, 122);
 }
 
+@media screen and (max-width: 1000px) {
+    .events-table-header,
+    .events-row {
+        grid-template-columns: 150px 160px 1fr 110px;
+        gap: 14px;
+        padding: 10px 3vw;
+    }
+
+    .events-section-header {
+        padding: 0 3vw;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .events-table-header,
     .events-row {
-        grid-template-columns: 120px 1fr;
-        gap: 12px;
+        grid-template-columns: 110px 1fr;
+        gap: 10px;
+        padding: 10px 4vw;
     }
 
+    .events-section-header {
+        padding: 0 4vw;
+    }
+
+    .events-col-title,
     .events-col-category,
+    .sort-header:nth-child(2),
     .sort-header:last-child {
         display: none;
-    }
-
-    .events-table {
-        margin: 0;
     }
 }
 
 @media screen and (max-width: 400px) {
     .events-table-header,
     .events-row {
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 90px 1fr;
+        padding: 8px 4vw;
+    }
+
+    .events-col-date {
+        font-size: 0.78rem;
     }
 }

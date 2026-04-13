@@ -1,60 +1,43 @@
-function IGGallery({ behold, sanityLoaded }) {
+import { useState } from 'react';
 
-    // this function displays each JSON object we get from the Behold API, with a switch to check the object's 'mediaType'
-    function getAllPics() {
-
-        if (behold.length > 0) {
-            return (
-                behold.map((item) => {
-                    switch (item.mediaType) {
-                        case "IMAGE":
-                            return (
-                                <a href={item.permalink} key={item.id} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" loading='lazy' alt={item.prunedCaption} src={item.mediaUrl}></img>
-                                </a>
-
-                            )
-                        case 'VIDEO':
-                            return (
-                                <a href={item.permalink} key={item.id} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" loading='lazy' alt={item.prunedCaption} src={item.thumbnailUrl}></img>
-                                </a>
-
-                            )
-                        case 'CAROUSEL_ALBUM':
-                            return (
-                                <a href={item.permalink} key={item.id} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" loading='lazy' alt={item.prunedCaption} src={item.mediaUrl}></img>
-                                </a>
-                            )
-                        default:
-                            return (
-                                <a href={item.permalink} key={item.id} target='_blank' rel='noopener noreferrer'>
-                                    <img className="IGGallery-pic" loading='lazy' alt={item.prunedCaption} src={item.mediaUrl}></img>
-                                </a>
-
-                            )
-                    }
-                })
-            )
-        }
-        else return <h2>loading...</h2>
-    }
+function IGPhoto({ item }) {
+    const [loaded, setLoaded] = useState(false);
+    const src = item.mediaType === 'VIDEO' ? item.thumbnailUrl : item.mediaUrl;
 
     return (
-        (sanityLoaded === true ?
-            <section id='IGGallery'>
-                <h2>From the Woodland Instagram feed:</h2>
-                <div id='IGGallery-all-pics'>
-                    {getAllPics()}
-                </div>
-            </section>
-            :
-            <section>
-                <h2>loading...</h2>
-            </section>
-        )
-    )
+        <a href={item.permalink} target='_blank' rel='noopener noreferrer' className="IGGallery-item">
+            <div className="IGGallery-placeholder" />
+            <img
+                className="IGGallery-pic"
+                loading='lazy'
+                alt={item.prunedCaption}
+                src={src}
+                onLoad={() => setLoaded(true)}
+                onError={(e) => { e.target.style.display = 'none'; }}
+                style={{ opacity: loaded ? 1 : 0 }}
+            />
+        </a>
+    );
 }
 
-export default IGGallery
+function IGGallery({ behold, sanityLoaded }) {
+    const isLoaded = sanityLoaded === true && behold && behold.length > 0;
+
+    return (
+        <section id='IGGallery'>
+            <h2>From the Woodland Instagram feed:</h2>
+            <div id='IGGallery-all-pics'>
+                {isLoaded
+                    ? behold.map((item) => <IGPhoto key={item.id} item={item} />)
+                    : Array.from({ length: 6 }).map((_, i) => (
+                        <div key={i} className="IGGallery-item">
+                            <div className="IGGallery-placeholder" />
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
+    );
+}
+
+export default IGGallery;

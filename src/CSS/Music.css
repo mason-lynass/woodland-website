@@ -190,26 +190,59 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+    #all-of-the-bands {
+        grid-template-columns: 50% 50%;
+        gap: 0;
+        margin: 2vw 0;
+    }
 
+    #all-of-the-bands a {
+        width: auto;
+    }
+
+    #music-controls {
+        padding: 0 3vw;
+        gap: 0.75rem;
+    }
+
+    #music-controls input {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 600px) {
     #music-top {
         margin: -2vw auto;
     }
 
     #all-of-the-bands {
-        grid-template-columns: 100%;
-        gap: 0px;
-        margin: 10vw 3vw;
+        grid-template-columns: 50% 50%;
+        gap: 0;
+        margin: 4vw 0;
     }
 
     #all-of-the-bands a {
-        width: 70vw;
-        padding: 1vw;
+        width: auto;
+        padding: 2vw;
     }
 
     #music-body {
-        padding: 2vw 10vw;
-        width: 80vw;
+        padding: 3vw 4vw;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #music-controls {
+        padding: 0 3vw;
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+
+    #music-sort-view {
+        justify-content: center;
     }
 
     #music-search {

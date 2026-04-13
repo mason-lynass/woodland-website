@@ -124,20 +124,21 @@
 
 @media screen and (max-width: 808px) {
   #homepage-top {
-    margin: 5vw;
-    flex-flow: column-reverse wrap;
+    margin: 5vw 3vw;
+    flex-flow: column-reverse nowrap;
     gap: 5vw;
+    align-items: center;
   }
 
   #peg-at-woodland {
-    width: 80vw;
-    min-width: 0px;
+    width: 90vw;
+    min-width: 0;
   }
 
   #homepage-events {
-    width: 88vw;
-  }  
-  
+    width: 90vw;
+  }
+
   #event-date {
     width: fit-content;
     font-size: calc((1.7 - 1) * 1.2vw + .6rem);
@@ -162,8 +163,6 @@
     font-size: calc((1.7 - 1) * 1.2vw + .6rem);
   }
 
-  
-
   #event-band-links {
     display: flex;
     flex-flow: row wrap;
@@ -171,7 +170,6 @@
     justify-content: center;
     gap: 1vw;
     align-items: center;
-
   }
 
   .event-band-link {
@@ -183,7 +181,6 @@
     font-size: 1rem;
     margin-top: 2vw;
   }
-  
 }
 
 @media screen and (max-width: 600px) {

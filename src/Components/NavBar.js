@@ -17,6 +17,7 @@ function NavBar() {
         <div id='nav-container' className={scrolled ? 'scrolled' : ''}>
             <div id='nav-flex' className='blue'>
                 <div id='nav-links'>
+                    <NavLink className="nav-link" to='/'>Home</NavLink>
                     <NavLink className="nav-link" to='/about'>About</NavLink>
                     <NavLink className="nav-link" to='/events'>Events</NavLink>
                     <NavLink className="nav-link" to='/music'>Music</NavLink>

@@ -1,0 +1,24 @@
+name: Monthly Newsletter
+
+on:
+  schedule:
+    # Every Friday at 9am PT (17:00 UTC)
+    - cron: '0 17 * * 5'
+  workflow_dispatch: # allow manual trigger from GitHub Actions tab
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Send newsletter if 1st of month is within 7 days
+        env:
+          MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
+          MAILCHIMP_LIST_ID: ${{ secrets.MAILCHIMP_LIST_ID }}
+          GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
+        run: node scripts/send-newsletter.js
