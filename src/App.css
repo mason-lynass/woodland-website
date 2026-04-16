@@ -42,7 +42,7 @@
   z-index: 1;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   padding: 27.5px 20px;
   gap: 2vw;
