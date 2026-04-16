@@ -37,9 +37,6 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
                 <button className="sort-header" onClick={() => toggleSort('title')}>
                     Show{arrow('title')}
                 </button>
-                <button className="sort-header">
-                    Description
-                </button>
                 <button className="sort-header events-col-category" onClick={() => toggleSort('categories')}>
                     Category{arrow('categories')}
                 </button>

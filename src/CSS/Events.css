@@ -41,7 +41,7 @@
 .events-table-header,
 .events-row {
     display: grid;
-    grid-template-columns: 150px 1fr 1fr 110px;
+    grid-template-columns: 150px 1fr 110px;
     gap: 16px;
     align-items: start;
     padding: 10px 2vw;
@@ -94,17 +94,6 @@
     color: rgb(180, 180, 180);
 }
 
-.events-col-description {
-    font-size: 0.85rem;
-    color: rgb(100, 100, 100);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.events-col-ticket {
-    display: none;
-}
 
 .events-col-category {
     text-align: right;
@@ -133,20 +122,6 @@
     white-space: nowrap;
 }
 
-.ticket-link {
-    display: inline-block;
-    font-size: 0.9rem;
-    color: white;
-    background: rgb(2, 167, 158);
-    text-decoration: none;
-    white-space: nowrap;
-    padding: 4px 12px;
-    border-radius: 20px;
-}
-
-.ticket-link:hover {
-    background: rgb(41, 122, 122);
-}
 
 
 /* Sort header buttons */
@@ -182,7 +157,7 @@
 @media screen and (max-width: 1000px) {
     .events-table-header,
     .events-row {
-        grid-template-columns: 140px 1fr 1fr 70px;
+        grid-template-columns: 140px 1fr 70px;
         gap: 12px;
         padding: 10px 3vw;
     }
@@ -211,20 +186,11 @@
 
     .events-row {
         grid-template-columns: 110px 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            "date show"
-            "date desc"
-            ".    cat";
         gap: 0 10px;
         padding: 10px 4vw;
     }
 
-    .events-col-date        { grid-area: date; align-self: start; }
-    .events-col-show        { grid-area: show; }
-    .events-col-description { grid-area: desc; display: block; margin-top: 3px; }
-    .events-col-category    { grid-area: cat;  display: block; text-align: left; margin-top: 3px; }
-    .events-col-ticket      { display: none; }
+    .events-col-category { display: block; text-align: left; }
 
     .events-section-header {
         padding: 0 4vw;

@@ -1,6 +1,7 @@
 import './App.css';
 
 import NavBar from './Components/NavBar';
+import ScrollToTop from './Components/ScrollToTop';
 import Homepage from './Components/Homepage';
 import About from './Components/About';
 import Footer from './Components/Footer';
@@ -48,6 +49,7 @@ function App() {
 
     return (
         <div className='App'>
+            <ScrollToTop />
             <NavBar />
             <Routes>
                 <Route

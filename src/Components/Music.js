@@ -54,14 +54,11 @@ function Music({
   }
 
   function randomBand() {
-    function findRandomBand() {
-      const bandIndex = Math.floor(Math.random() * allBands.length);
-      const bandUrl = allBands[bandIndex].description;
-      if (bandUrl.includes("duckduckgo")) {
-        return findRandomBand();
-      } else return bandUrl;
-    }
-    return findRandomBand();
+    const realBands = allBands.filter(
+      (b) => b.description && !b.description.includes("duckduckgo"),
+    );
+    if (realBands.length === 0) return null;
+    return realBands[Math.floor(Math.random() * realBands.length)].description;
   }
 
   const sorted = [...pageBands].sort((a, b) => {
@@ -69,9 +66,7 @@ function Music({
     return sortDir === "asc" ? cmp : -cmp;
   });
 
-  return sanityLoaded === false ? (
-    <h2 id="music-loading">loading...</h2>
-  ) : (
+  return (
     <main id="music-main">
       <div id="music-top">
         <h1>~ All of the bands ~</h1>

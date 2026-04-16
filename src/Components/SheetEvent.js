@@ -1,5 +1,5 @@
 function SheetEvent({ show }) {
-    const { date, show_title, performers, categories, ticket_link, start_time, cost, description } = show;
+    const { date, show_title, performers, categories, start_time, cost } = show;
 
     function formatDate(input) {
         const pattern = /(\d{4})-(\d{2})-(\d{2})/;
@@ -21,15 +21,6 @@ function SheetEvent({ show }) {
                 {show_title && performers.length > 0 && ': '}
                 {performers.length > 0 && performers.join(', ')}
                 {!show_title && performers.length === 0 && <span className="events-no-title">—</span>}
-            </div>
-            <div className="events-col-description">
-                {description || <span className="events-no-title">—</span>}
-            </div>
-            <div className="events-col-ticket">
-                {ticket_link
-                    ? <a href={ticket_link} target="_blank" rel="noopener noreferrer" className="ticket-link" onClick={(e) => e.stopPropagation()}>Tickets ↗</a>
-                    : <span className="events-no-title">—</span>
-                }
             </div>
             <div className="events-col-category">
                 {cost && <span className="events-cost">{cost}</span>}
