@@ -14,6 +14,7 @@
   height: 160px;
   background: transparent;
   transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+  z-index: 2;
 }
 
 /* When scrolled: logo shrinks to sit inside the nav bar */
@@ -38,9 +39,10 @@
 
 #nav-flex {
   position: relative;
+  z-index: 1;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
   align-items: center;
   padding: 27.5px 20px;
   gap: 2vw;
@@ -227,6 +229,40 @@ main h2 {
   }
 }
 
+/* ── Hamburger / mobile menu ── */
+
+#nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+#nav-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+#nav-mobile-menu .nav-link {
+  padding: 14px 20px;
+  font-size: 18px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+#nav-mobile-menu .nav-link:hover {
+  background: rgba(0,0,0,0.1);
+}
+
 /* ── Tablet ── */
 @media screen and (max-width: 900px) {
   #nav-container {
@@ -256,11 +292,12 @@ main h2 {
 
   #nav-flex {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
     align-items: center;
     padding: 14px 4vw;
-    width: 92vw;
+    width: 100%;
+    box-sizing: border-box;
     gap: 12px;
   }
 
@@ -274,12 +311,11 @@ main h2 {
   }
 
   #nav-links {
-    gap: 16px;
+    display: none;
   }
 
-  #nav-links a, #nav-flex a {
-    font-size: 16px;
-    padding: 6px 0;
+  #nav-hamburger {
+    display: block;
   }
 
   #to-home h1 {

@@ -1,5 +1,6 @@
 #music-main {
     margin: 1vw 0;
+    overflow-x: hidden;
 }
 
 #all-of-the-bands {
@@ -175,13 +176,13 @@
     }
 
     #all-of-the-bands {
-        grid-template-columns: 32% 32% 32%;
-        gap: 20px 2%;
-        margin: auto 3%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        margin: 0;
     }
 
     #all-of-the-bands a {
-        width: 25vw;
+        width: auto;
     }
 
     .music-band h4 {
