@@ -1,20 +1,11 @@
 import '../CSS/Homepage.css';
 import Peg from '../Images/peg-at-woodland.webp';
 
-// import BigEvent from './BigEvent';
 import MailingList from './MailingList';
 import IGGallery from './IGGallery';
 import HomepageEvents from './HomepageEvents';
 
-function Homepage({
-    shows,
-    bands,
-    currentDate,
-    sortedShows,
-    futureShows,
-    sanityLoaded,
-    behold,
-}) {
+function Homepage({ futureShows, sanityLoaded, behold }) {
     return (
         <main>
             <h2>
@@ -30,7 +21,6 @@ function Homepage({
                 />
                 <HomepageEvents
                     futureShows={futureShows}
-                    bands={bands}
                     sanityLoaded={sanityLoaded}
                 />
             </section>

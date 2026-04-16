@@ -1,5 +1,6 @@
 #music-main {
     margin: 1vw 0;
+    overflow-x: hidden;
 }
 
 #all-of-the-bands {
@@ -26,6 +27,7 @@
 
 #music-top {
     text-align: center;
+    width: 100%;
 }
 
 #music-top h1 {
@@ -34,11 +36,88 @@
 
 #music-body {
     width: 100%;
+    box-sizing: border-box;
     font-size: calc((2 - 1) * 1.2vw + .5rem);
     background-image: linear-gradient(to bottom, rgba(41, 122, 122, 0.1), rgb(255, 255, 255, 1), rgb(255, 255, 255, 1), rgb(255, 255, 255, 1), rgba(41, 122, 122, 0.1));
-    margin: 0 auto;
-    padding: 2vw;
+    margin: 0;
+    padding: 2vw 4vw;
     background-color: white;
+}
+
+#music-controls {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 1.5vw 0;
+    padding: 0 4vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#music-sort-view {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.music-toggle-btn {
+    background: none;
+    border: 2px solid rgb(2, 167, 158);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: rgb(41, 122, 122);
+    transition: background 0.15s, color 0.15s;
+}
+
+.music-toggle-btn:hover,
+.music-toggle-btn.active {
+    background: rgb(2, 167, 158);
+    color: white;
+}
+
+#all-of-the-bands.list-view {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+#all-of-the-bands.list-view a {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #ccc;
+    box-shadow: none;
+    margin: 0;
+    padding: 10px 2vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#all-of-the-bands.list-view a:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+#all-of-the-bands.list-view a:hover {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#all-of-the-bands.list-view .band-url {
+    font-size: 0.8rem;
+    color: rgb(100, 100, 100);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 50%;
+    text-align: right;
 }
 
 #music-search {
@@ -50,7 +129,7 @@
     gap: 5vw;
 }
 
-#music-search input {
+#music-controls input, #music-search input {
     width: 300px;
     height: 40px;
     padding: 10px 20px;
@@ -97,13 +176,13 @@
     }
 
     #all-of-the-bands {
-        grid-template-columns: 32% 32% 32%;
-        gap: 20px 2%;
-        margin: auto 3%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        margin: 0;
     }
 
     #all-of-the-bands a {
-        width: 25vw;
+        width: auto;
     }
 
     .music-band h4 {
@@ -112,26 +191,59 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+    #all-of-the-bands {
+        grid-template-columns: 50% 50%;
+        gap: 0;
+        margin: 2vw 0;
+    }
 
+    #all-of-the-bands a {
+        width: auto;
+    }
+
+    #music-controls {
+        padding: 0 3vw;
+        gap: 0.75rem;
+    }
+
+    #music-controls input {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 600px) {
     #music-top {
         margin: -2vw auto;
     }
 
     #all-of-the-bands {
-        grid-template-columns: 100%;
-        gap: 0px;
-        margin: 10vw 3vw;
+        grid-template-columns: 50% 50%;
+        gap: 0;
+        margin: 4vw 0;
     }
 
     #all-of-the-bands a {
-        width: 70vw;
-        padding: 1vw;
+        width: auto;
+        padding: 2vw;
     }
 
     #music-body {
-        padding: 2vw 10vw;
-        width: 80vw;
+        padding: 3vw 4vw;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #music-controls {
+        padding: 0 3vw;
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+
+    #music-sort-view {
+        justify-content: center;
     }
 
     #music-search {
