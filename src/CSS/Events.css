@@ -179,8 +179,7 @@
         padding: 10px 4vw;
     }
 
-    .events-table-header .sort-header:nth-child(3),
-    .events-table-header .sort-header:nth-child(4) {
+    .events-table-header .sort-header:nth-child(3) {
         display: none;
     }
 
