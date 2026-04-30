@@ -3,7 +3,7 @@ import SheetEvent from './SheetEvent';
 import IGGallery from './IGGallery';
 import '../CSS/Events.css';
 
-function EventsTable({ shows, defaultSort = 'date-asc' }) {
+function EventsTable({ shows, defaultSort = 'date-asc', showVenue = false }) {
     const [sort, setSort] = useState(defaultSort);
 
     function toggleSort(field) {
@@ -29,7 +29,7 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
     });
 
     return (
-        <div className="events-table">
+        <div className={`events-table${showVenue ? ' events-table--venue' : ''}`}>
             <div className="events-table-header">
                 <button className="sort-header" onClick={() => toggleSort('date')}>
                     Date{arrow('date')}
@@ -37,12 +37,13 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
                 <button className="sort-header" onClick={() => toggleSort('title')}>
                     Show{arrow('title')}
                 </button>
+                {showVenue && <button className="sort-header">Venue</button>}
                 <button className="sort-header events-col-category" onClick={() => toggleSort('categories')}>
                     Category{arrow('categories')}
                 </button>
             </div>
             {sorted.map((show) => (
-                <SheetEvent key={show.id} show={show} />
+                <SheetEvent key={show.id} show={show} showVenue={showVenue} />
             ))}
         </div>
     );
@@ -50,6 +51,7 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
 
 function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }) {
     const totalVenue = (pastVenueShows || []).length;
+    const venueNames = [...new Set((pastVenueShows || []).map((s) => s.venue))].join(' & ');
 
     return (
         <main id="events-main">
@@ -100,10 +102,10 @@ function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }
                 {pastVenueShows && pastVenueShows.length > 0 && (
                     <div id="past-events">
                         <div className="events-section-header">
-                            <h3>Past Events at The Josephine &amp; The Chummery</h3>
+                            <h3>Past Events at {venueNames}</h3>
                             <span className="events-count">{totalVenue} {totalVenue === 1 ? 'event' : 'events'}</span>
                         </div>
-                        <EventsTable shows={pastVenueShows} defaultSort="date-desc" />
+                        <EventsTable shows={pastVenueShows} defaultSort="date-desc" showVenue />
                     </div>
                 )}
             </section>

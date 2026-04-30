@@ -1,5 +1,5 @@
-function SheetEvent({ show }) {
-    const { date, show_title, performers, categories, start_time, cost } = show;
+function SheetEvent({ show, showVenue = false }) {
+    const { date, show_title, performers, categories, start_time, cost, venue } = show;
 
     function formatDate(input) {
         const pattern = /(\d{4})-(\d{2})-(\d{2})/;
@@ -22,6 +22,7 @@ function SheetEvent({ show }) {
                 {performers.length > 0 && performers.join(', ')}
                 {!show_title && performers.length === 0 && <span className="events-no-title">—</span>}
             </div>
+            {showVenue && <div className="events-col-venue">{venue}</div>}
             <div className="events-col-category">
                 {cost && <span className="events-cost">{cost}</span>}
                 {categories}

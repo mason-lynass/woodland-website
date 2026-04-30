@@ -8,20 +8,24 @@ function Music({
   pastVenueShows,
   sanityLoaded,
 }) {
+  // Normalize band names for dedup: lowercase, strip punctuation, collapse whitespace
+  const normalizeName = (n) =>
+    n.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, " ").trim();
+
   // Merge Sanity bands with performers from event sheets
   const allBands = (() => {
-    const sanityNameSet = new Set(bands.map((b) => b.name.toLowerCase()));
+    const seen = new Set(bands.map((b) => normalizeName(b.name)));
     const allShows = [
       ...(futureShows || []),
       ...(pastShows || []),
       ...(pastVenueShows || []),
     ];
     const extra = [];
-    const seen = new Set(sanityNameSet);
     allShows.forEach((show) => {
       show.performers.forEach((name) => {
-        if (!seen.has(name.toLowerCase())) {
-          seen.add(name.toLowerCase());
+        const key = normalizeName(name);
+        if (!seen.has(key)) {
+          seen.add(key);
           extra.push({
             _id: `event-${name}`,
             name,
