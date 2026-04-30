@@ -183,7 +183,7 @@ async function mailchimpRequest(path, method, body) {
         method,
         headers: {
             'Authorization': `apikey ${apiKey}`,
-            'Content-Type': 'application/json',
+            ...(body ? { 'Content-Type': 'application/json' } : {}),
         },
         body: body ? JSON.stringify(body) : undefined,
     });
@@ -196,6 +196,15 @@ async function sendNewsletter(html, shows) {
     const listId = process.env.MAILCHIMP_LIST_ID;
     const nextMonthName = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 1)
         .toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    const campaignTitle = `Newsletter ${nextMonthName}`;
+
+    // Guard against double-send if the workflow fires twice in the same window
+    const existing = await mailchimpRequest(`/campaigns?count=10&sort_field=create_time&sort_dir=DESC`, 'GET');
+    const alreadySent = existing.campaigns?.some(c => c.settings?.title === campaignTitle);
+    if (alreadySent) {
+        console.log(`Newsletter for ${nextMonthName} already sent — skipping.`);
+        return;
+    }
 
     console.log('Creating campaign...');
     const campaign = await mailchimpRequest('/campaigns', 'POST', {
@@ -204,7 +213,7 @@ async function sendNewsletter(html, shows) {
         settings: {
             subject_line: `Woodland Theater — Upcoming Shows for ${nextMonthName}`,
             preview_text: `${shows.length} show${shows.length !== 1 ? 's' : ''} coming up at Woodland`,
-            title: `Newsletter ${nextMonthName}`,
+            title: campaignTitle,
             from_name: 'Woodland Theater',
             reply_to: 'contact@woodlandtheater.org',
         },

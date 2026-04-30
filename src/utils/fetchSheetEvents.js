@@ -61,19 +61,21 @@ export async function fetchSheetEvents(sheetUrl) {
             cost: row['Cost'] || '',
             venue: row['Venue Name'] || 'Woodland Theater',
         }))
-        .sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
+        .sort((a, b) => Date.parse(a.date + 'T12:00:00') - Date.parse(b.date + 'T12:00:00'));
 
     const woodlandShows = shows.filter((s) => !s.venue || s.venue === 'Woodland Theater');
     const otherVenueShows = shows.filter((s) => s.venue && s.venue !== 'Woodland Theater');
 
-    const futureShows = woodlandShows.filter((s) => Date.parse(s.date) >= todayMs);
+    const parseDate = (d) => Date.parse(d + 'T12:00:00');
+
+    const futureShows = woodlandShows.filter((s) => parseDate(s.date) >= todayMs);
     const pastShows = [...woodlandShows]
-        .filter((s) => Date.parse(s.date) < todayMs)
-        .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+        .filter((s) => parseDate(s.date) < todayMs)
+        .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
     const pastVenueShows = [...otherVenueShows]
-        .filter((s) => Date.parse(s.date) < todayMs)
-        .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+        .filter((s) => parseDate(s.date) < todayMs)
+        .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
     return { futureShows, pastShows, pastVenueShows };
 }

@@ -118,9 +118,14 @@ function Music({
             <a
               id="random-band"
               className="blue"
-              href={randomBand()}
+              href="#"
               rel="noopener noreferrer"
-              target="_blank"
+              onClick={(e) => {
+                e.preventDefault();
+                const url = randomBand();
+                console.log('Random band URL:', url, '| Real bands count:', allBands.filter(b => b.description && !b.description.includes('duckduckgo')).length);
+                if (url) window.open(url, '_blank');
+              }}
             >
               Random Band
             </a>

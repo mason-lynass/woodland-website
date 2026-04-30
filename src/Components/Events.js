@@ -49,7 +49,6 @@ function EventsTable({ shows, defaultSort = 'date-asc' }) {
 }
 
 function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }) {
-    const totalWoodland = futureShows.length + pastShows.length;
     const totalVenue = (pastVenueShows || []).length;
 
     return (
@@ -88,17 +87,15 @@ function Events({ sanityLoaded, futureShows, pastShows, pastVenueShows, behold }
                     )}
                 </div>
 
-                <div id="past-events">
-                    <div className="events-section-header">
-                        <h3>Past Events at Woodland Theater</h3>
-                        <span className="events-count">{totalWoodland} {totalWoodland === 1 ? 'event' : 'events'}</span>
-                    </div>
-                    {pastShows.length > 0 ? (
+                {pastShows.length > 0 && (
+                    <div id="past-events">
+                        <div className="events-section-header">
+                            <h3>Past Events at Woodland Theater</h3>
+                            <span className="events-count">{pastShows.length} {pastShows.length === 1 ? 'event' : 'events'}</span>
+                        </div>
                         <EventsTable shows={pastShows} defaultSort="date-desc" />
-                    ) : (
-                        <p style={{ textAlign: 'center' }}>No past events yet.</p>
-                    )}
-                </div>
+                    </div>
+                )}
 
                 {pastVenueShows && pastVenueShows.length > 0 && (
                     <div id="past-events">
