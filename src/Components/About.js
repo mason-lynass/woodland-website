@@ -1,7 +1,7 @@
 import '../CSS/About.css';
 
+import Landon from '../Images/landon.jpg';
 import Mason from '../Images/mason-woodland.webp';
-import Lucas from '../Images/SocialIcon.webp';
 import Tom from '../Images/Eykemans.webp';
 import JamesMadson from '../Images/jm.jpg';
 import TeenageToad from '../Images/teenage-toad.jpg';
@@ -27,32 +27,22 @@ function About() {
                 <h1>About our tenants:</h1>
                 <div id='tenants-flex'>
                     <div className='one-tenant'>
-                        <h3>Mason Lynass</h3>
-                        <img
-                            src={Mason}
-                            alt='Mason at woodland'
-                            loading='lazy'
-                        />
+                        <h3>Landon Coates Welsh (he/him)</h3>
+                        <img src={Landon} alt='Landon at Woodland' loading='lazy' style={{ objectPosition: 'center 30%' }} />
                         <p>
-                            Mason Lynass is a multi-instrumentalist and
-                            composer. He has performed with many musicians
-                            around Seattle and the US, worked as a freelance
-                            producer and sound designer, and instructed students
-                            of all ages and abilities. At Woodland, Mason enjoys
-                            the freedom to play the drums with wild abandon,
-                            experiment with new musical styles and ideas, and
-                            host shows for peers and friends.
-                        </p>
-                    </div>
-                    <div className='one-tenant'>
-                        <h3>Lucas Fisher</h3>
-                        <img src={Lucas} alt='icon of Lucas' loading='lazy' />
-                        <p>
-                            Lucas Fisher is a 3D artist, game developer, and
-                            musician. Having often worked in the intersection of
-                            disciplines, Woodland has been a fertile ground for
-                            experimentation and collaboration for him since
-                            2017.
+                            Landon is a guitarist, producer, and field recording
+                            enthusiast who plays in{' '}
+                            <a href='https://greatooze.bandcamp.com/' target='_blank' rel='noopener noreferrer'>Great Ooze</a>
+                            ,{' '}
+                            <a href='https://teenagetoad.bandcamp.com/' target='_blank' rel='noopener noreferrer'>Teenage Toad</a>
+                            ,{' '}
+                            <a href='https://trashdick.bandcamp.com/' target='_blank' rel='noopener noreferrer'>Trash Dick Records</a>
+                            {' '}and more. Often found behind the Woodland sound board,
+                            he also runs our new{' '}
+                            <a href='https://608tapes.bandcamp.com/' target='_blank' rel='noopener noreferrer'>in-house tape label</a>
+                            . <a href='mailto:coateswelsh@gmail.com'>Hit him up here</a>
+                            {' '}with ideas, invitations to collaborate, and questions
+                            about the building's history.
                         </p>
                     </div>
                     <div className='one-tenant'>
@@ -66,74 +56,56 @@ function About() {
                             seeks ways to help build creative communities at
                             Woodland Theater.
                         </p>
-                        <a
-                            href='https://design.eykemans.com/'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
+                        <a href='https://design.eykemans.com/' target='_blank' rel='noopener noreferrer'>
                             design.eykemans.com
                         </a>
                     </div>
                     <div className='one-tenant'>
+                        <h3>Mason Lynass</h3>
+                        <img src={Mason} alt='Mason at woodland' loading='lazy' />
+                        <p>
+                            Mason Lynass is a multi-instrumentalist and
+                            composer. He has performed with many musicians
+                            around Seattle and the US, worked as a freelance
+                            producer and sound designer, and instructed students
+                            of all ages and abilities. At Woodland, Mason enjoys
+                            the freedom to play the drums with wild abandon,
+                            experiment with new musical styles and ideas, and
+                            host shows for peers and friends.
+                        </p>
+                    </div>
+                    <div className='one-tenant'>
                         <h3>James Madson</h3>
-                        <img
-                            src={JamesMadson}
-                            alt='James Madson'
-                            loading='lazy'
-                        />
+                        <img src={JamesMadson} alt='James Madson' loading='lazy' />
                         <p>
                             James Madson is an independent digital designer and
                             musician. Joining Woodland in 2023 has provided a
                             space to create and contribute to a beautiful
                             creative community.
                         </p>
-                        <a
-                            href='https://jamesmadson.me/'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
+                        <a href='https://jamesmadson.me/' target='_blank' rel='noopener noreferrer'>
                             Website
                         </a>
                         <br />
-                        <a
-                            href='https://jamesmadson.bandcamp.com/'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
+                        <a href='https://jamesmadson.bandcamp.com/' target='_blank' rel='noopener noreferrer'>
                             Bandcamp
                         </a>
                     </div>
                     <div className='one-tenant'>
                         <h3>Teenage Toad</h3>
-                        <img
-                            src={TeenageToad}
-                            alt='Teenage Toad'
-                            loading='lazy'
-                        />
+                        <img src={TeenageToad} alt='Teenage Toad' loading='lazy' />
                         <p>
                             Toads in your gutter, Slime in your hand; it's yr
                             favorite neighborhood junk rock band
                         </p>
-                        <a
-                            href='https://teenagetoad.bandcamp.com/'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
+                        <a href='https://teenagetoad.bandcamp.com/' target='_blank' rel='noopener noreferrer'>
                             Bandcamp
                         </a>
                     </div>
                     <div className='one-tenant'>
                         <h3>Trash Dick Records</h3>
-                        <img
-                            src={TrashDickRecords}
-                            alt='Trash Dick Records'
-                            loading='lazy'
-                        />
-                        <a
-                            href='https://trashdick.bandcamp.com/'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
+                        <img src={TrashDickRecords} alt='Trash Dick Records' loading='lazy' />
+                        <a href='https://trashdick.bandcamp.com/' target='_blank' rel='noopener noreferrer'>
                             Bandcamp
                         </a>
                     </div>

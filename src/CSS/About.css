@@ -7,7 +7,7 @@
 }
 
 #woodland-about h2, #woodland-about h3 {
-  text-align: left;
+  text-align: center;
   margin: 2vw 0;
 }
 
@@ -41,6 +41,10 @@
 
 .one-tenant img {
   width: 400px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 #about-bottom {
@@ -101,6 +105,7 @@
   
   .one-tenant img {
     width: 100%;
+    height: 260px;
   }
 }
 
