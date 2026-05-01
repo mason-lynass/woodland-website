@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.62f36f26.css",
-    "main.js": "/static/js/main.bd0dbfc2.js",
+    "main.css": "/static/css/main.3d4650cb.css",
+    "main.js": "/static/js/main.74e2fab4.js",
     "static/js/453.63fc7462.chunk.js": "/static/js/453.63fc7462.chunk.js",
+    "static/media/landon.jpg": "/static/media/landon.0639968ac7abcfd3c9b2.jpg",
     "static/media/peg-at-woodland.webp": "/static/media/peg-at-woodland.75597ff78cce3de2dfc5.webp",
     "static/media/jm.jpg": "/static/media/jm.1cdd42fb50b3b14e075f.jpg",
     "static/media/teenage-toad.jpg": "/static/media/teenage-toad.a71de9b3cdf0da8675be.jpg",
     "static/media/Woodland-Theater-1932.webp": "/static/media/Woodland-Theater-1932.032737c66e5ec95d2ce3.webp",
-    "static/media/SocialIcon.webp": "/static/media/SocialIcon.31a7d03865443938efcb.webp",
     "static/media/Eykemans.webp": "/static/media/Eykemans.ac57eea5aa72f3755232.webp",
     "static/media/trash-dick-records.jpg": "/static/media/trash-dick-records.cc3ca5cef1718386dbfe.jpg",
     "static/media/mason-woodland.webp": "/static/media/mason-woodland.9b74f2fc29c1b5dfcaa1.webp",
     "static/media/WoodlandTheater_Logo_200px_height.webp": "/static/media/WoodlandTheater_Logo_200px_height.fceb0ada536ef2726685.webp",
     "static/media/instagram.svg": "/static/media/instagram.2964857818dad1b75fccf355259c5575.svg",
     "index.html": "/index.html",
-    "main.62f36f26.css.map": "/static/css/main.62f36f26.css.map",
-    "main.bd0dbfc2.js.map": "/static/js/main.bd0dbfc2.js.map",
+    "main.3d4650cb.css.map": "/static/css/main.3d4650cb.css.map",
+    "main.74e2fab4.js.map": "/static/js/main.74e2fab4.js.map",
     "453.63fc7462.chunk.js.map": "/static/js/453.63fc7462.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62f36f26.css",
-    "static/js/main.bd0dbfc2.js"
+    "static/css/main.3d4650cb.css",
+    "static/js/main.74e2fab4.js"
   ]
 }
