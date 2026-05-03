@@ -1,9 +1,3 @@
-@font-face {
-  font-family: 'Space Grotesk';
-  src: url(https://fonts.googleapis.com/css?family=Space+Grotesk);
-  font-display: swap;
-}
-
 html, button, input, h1, h2, h3, h4, p, a {
   font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
   /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
