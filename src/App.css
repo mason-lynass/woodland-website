@@ -13,13 +13,16 @@
   width: calc(160px * 2);
   height: 160px;
   background: transparent;
-  transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out, top 0.4s ease-in-out, bottom 0.4s ease-in-out;
+  will-change: width, height;
+  transform: translateZ(0);
   z-index: 2;
 }
 
 /* When scrolled: logo shrinks to sit inside the nav bar */
 #nav-container.scrolled {
   padding-bottom: 0;
+  transition: padding-bottom 0.4s ease-in-out;
 }
 
 #nav-container.scrolled #logo {
@@ -27,6 +30,7 @@
   height: 88px;
   top: 0;
   bottom: 0;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out, top 0.4s ease-in-out, bottom 0.4s ease-in-out;
 }
 
 #nav-container {
@@ -34,7 +38,7 @@
   top: 0;
   padding-bottom: 80px;
   z-index: 10;
-  transition: padding-bottom 0.3s ease;
+  transition: padding-bottom 0.4s ease-in-out;
 }
 
 #nav-flex {

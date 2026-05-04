@@ -3,16 +3,28 @@ import Logo from '../Images/WoodlandTheater_Logo_200px_height.webp';
 import { useEffect, useState } from 'react';
 
 function NavBar() {
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(() => window.scrollY > 80);
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
+        let rafId = null;
         function handleScroll() {
-            setScrolled(window.scrollY > 60);
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+                rafId = null;
+                setScrolled(prev => {
+                    if (!prev && window.scrollY > 80) return true;
+                    if (prev && window.scrollY < 40) return false;
+                    return prev;
+                });
+            });
         }
         window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (rafId) cancelAnimationFrame(rafId);
+        };
     }, []);
 
     // Close menu on route change
