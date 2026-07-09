@@ -7,6 +7,7 @@ import About from './Components/About';
 import Footer from './Components/Footer';
 import Events from './Components/Events';
 import Music from './Components/Music';
+import MailingList from './Components/MailingList';
 
 import { fetchSheetEvents } from './utils/fetchSheetEvents';
 
@@ -30,11 +31,15 @@ function App() {
 
     useEffect(() => {
         fetch(beholdURL).then((res) => {
-            if (res.ok) res.json().then((res) => setBehold(res.posts));
+            if (res.ok) {
+                res.json().then((res) => setBehold(res.posts));
+            }
         });
 
         fetch(bandURL).then((res) => {
-            if (res.ok) res.json().then((res) => setBands(res.result));
+            if (res.ok) {
+                res.json().then((res) => setBands(res.result));
+            }
         });
 
         fetchSheetEvents(sheetURL)
@@ -51,6 +56,7 @@ function App() {
         <div className='App'>
             <ScrollToTop />
             <NavBar />
+
             <Routes>
                 <Route
                     path='/'
@@ -63,7 +69,9 @@ function App() {
                         />
                     }
                 />
+
                 <Route path='/about' element={<About />} />
+
                 <Route
                     path='/events'
                     element={
@@ -77,6 +85,7 @@ function App() {
                         />
                     }
                 />
+
                 <Route
                     path='/music'
                     element={
@@ -90,6 +99,8 @@ function App() {
                     }
                 />
             </Routes>
+
+            <MailingList />
             <Footer />
         </div>
     );
