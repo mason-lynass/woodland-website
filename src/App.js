@@ -72,6 +72,8 @@ function App() {
 
                 <Route path='/about' element={<About />} />
 
+                <Route path='/newsletter' element={<main id='newsletter-page' />} />
+
                 <Route
                     path='/events'
                     element={
