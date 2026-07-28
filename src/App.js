@@ -7,6 +7,7 @@ import About from './Components/About';
 import Footer from './Components/Footer';
 import Events from './Components/Events';
 import Music from './Components/Music';
+import Newsletter from './Components/Newsletter';
 
 import { fetchSheetEvents } from './utils/fetchSheetEvents';
 
@@ -64,6 +65,7 @@ function App() {
                     }
                 />
                 <Route path='/about' element={<About />} />
+                <Route path='/newsletter' element={<Newsletter />} />
                 <Route
                     path='/events'
                     element={

@@ -648,9 +648,7 @@ function MailingListForm() {
           padding: 0 0 10px 0 !important;
         }
         .ml-hide-horizontal { display: none !important; }
-        .ml-form-formContent.horozintalForm .ml-button-horizontal { display: none!important; }
-        .ml-mobileButton-horizontal { display: inline-block !important; margin-bottom: 20px;width:100%; }
-        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal > div { padding-bottom: 0px !important; }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal > div { padding-bottom: 16px !important; }
       }
             `}</style>
 
