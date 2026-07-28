@@ -1,7 +1,6 @@
 import '../CSS/Homepage.css';
 import Peg from '../Images/peg-at-woodland.webp';
 
-import MailingList from './MailingList';
 import IGGallery from './IGGallery';
 import HomepageEvents from './HomepageEvents';
 
@@ -25,7 +24,6 @@ function Homepage({ futureShows, sanityLoaded, behold }) {
                 />
             </section>
             <IGGallery behold={behold} sanityLoaded={sanityLoaded} />
-            <MailingList />
         </main>
     );
 }
