@@ -1,7 +1,7 @@
 // Fetches and parses events from the published Woodland Google Sheet CSV.
 //
 // Expected columns:
-//   Show Date | Show Title / Lineup | Show Title | Description | Ticket Link | Category | Status | Venue Name | Source
+//   Show Date | Show Title / Lineup | Show Title | Description | Ticket Link | Time | Sugg. $ | Category | Status | Venue Name | Source
 
 function parseCSV(text) {
     const lines = text.trim().split('\n');
@@ -57,8 +57,8 @@ export async function fetchSheetEvents(sheetUrl) {
             description: row['Description'] || '',
             categories: row['Category'] || '',
             ticket_link: row['Ticket Link'] || '',
-            start_time: row['Start Time'] || '',
-            cost: row['Cost'] || '',
+            start_time: row['Time'] || '',
+            cost: row['Sugg. $'] || '',
             venue: row['Venue Name'] || 'Woodland Theater',
         }))
         .sort((a, b) => Date.parse(a.date + 'T12:00:00') - Date.parse(b.date + 'T12:00:00'));

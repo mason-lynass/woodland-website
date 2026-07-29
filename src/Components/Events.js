@@ -34,10 +34,11 @@ function EventsTable({ shows, defaultSort = 'date-asc', showVenue = false }) {
                 <button className="sort-header" onClick={() => toggleSort('date')}>
                     Date{arrow('date')}
                 </button>
+                <button className="sort-header events-col-time">Time</button>
                 <button className="sort-header" onClick={() => toggleSort('title')}>
                     Show{arrow('title')}
                 </button>
-                {showVenue && <button className="sort-header">Venue</button>}
+                {showVenue && <button className="sort-header events-col-venue">Venue</button>}
                 <button className="sort-header events-col-category" onClick={() => toggleSort('categories')}>
                     Category{arrow('categories')}
                 </button>
