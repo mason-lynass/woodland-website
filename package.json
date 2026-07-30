@@ -1,7 +1,7 @@
 {
   "name": "woodland-website",
   "version": "0.1.0",
-  "homepage": "https://woodlandtheater.org",
+  "homepage": "https://www.woodlandtheater.org",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -15,7 +15,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "node scripts/check-required-env.js && npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "gh-pages": "^5.0.0"
   }
 }
