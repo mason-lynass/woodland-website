@@ -35,6 +35,7 @@ function EventsTable({ shows, defaultSort = 'date-asc', showVenue = false }) {
                     Date{arrow('date')}
                 </button>
                 <button className="sort-header events-col-time">Time</button>
+                <button className="sort-header events-col-cost">Sugg. $</button>
                 <button className="sort-header" onClick={() => toggleSort('title')}>
                     Show{arrow('title')}
                 </button>

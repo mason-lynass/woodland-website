@@ -41,7 +41,7 @@
 .events-table-header,
 .events-row {
     display: grid;
-    grid-template-columns: 150px 80px 1fr 110px;
+    grid-template-columns: 150px 80px 70px 1fr 110px;
     gap: 16px;
     align-items: start;
     padding: 10px 2vw;
@@ -104,7 +104,7 @@
 
 .events-table--venue .events-table-header,
 .events-table--venue .events-row {
-    grid-template-columns: 150px 80px 1fr 160px 110px;
+    grid-template-columns: 150px 80px 70px 1fr 160px 110px;
 }
 
 .events-col-venue {
@@ -120,18 +120,17 @@
     color: rgb(100, 100, 100);
 }
 
-.events-time {
+.events-col-cost {
+    font-size: 0.9rem;
+    color: rgb(100, 100, 100);
+}
+
+.events-time,
+.events-cost {
     display: none;
     font-size: 0.75rem;
     color: rgb(100, 100, 100);
     margin-top: 2px;
-}
-
-.events-cost {
-    display: block;
-    font-size: 0.75rem;
-    color: rgb(100, 100, 100);
-    margin-bottom: 2px;
 }
 
 .events-lineup-text {
@@ -183,11 +182,13 @@
     .events-col-category,
     .events-col-venue,
     .events-col-time,
+    .events-col-cost,
     .sort-header:last-child {
         display: none;
     }
 
-    .events-time {
+    .events-time,
+    .events-cost {
         display: block;
     }
 
