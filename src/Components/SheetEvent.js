@@ -16,6 +16,7 @@ function SheetEvent({ show, showVenue = false }) {
                 {formatDate(date)}
                 {start_time && <span className="events-time">{start_time}</span>}
             </div>
+            <div className="events-col-time">{start_time}</div>
             <div className="events-col-show">
                 {show_title && <strong>{show_title}</strong>}
                 {show_title && performers.length > 0 && ': '}
