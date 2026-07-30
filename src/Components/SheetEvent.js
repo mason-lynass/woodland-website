@@ -15,8 +15,10 @@ function SheetEvent({ show, showVenue = false }) {
             <div className="events-col-date">
                 {formatDate(date)}
                 {start_time && <span className="events-time">{start_time}</span>}
+                {cost && <span className="events-cost">{cost}</span>}
             </div>
             <div className="events-col-time">{start_time}</div>
+            <div className="events-col-cost">{cost}</div>
             <div className="events-col-show">
                 {show_title && <strong>{show_title}</strong>}
                 {show_title && performers.length > 0 && ': '}
@@ -25,7 +27,6 @@ function SheetEvent({ show, showVenue = false }) {
             </div>
             {showVenue && <div className="events-col-venue">{venue}</div>}
             <div className="events-col-category">
-                {cost && <span className="events-cost">{cost}</span>}
                 {categories}
             </div>
         </div>
