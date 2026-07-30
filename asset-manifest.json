@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.44623a6f.css",
-    "main.js": "/static/js/main.17a35cbb.js",
-    "static/js/787.b97a9f3c.chunk.js": "/static/js/787.b97a9f3c.chunk.js",
+    "main.css": "/static/css/main.49fa193d.css",
+    "main.js": "/static/js/main.63661246.js",
+    "static/js/787.78bfc86e.chunk.js": "/static/js/787.78bfc86e.chunk.js",
     "static/media/landon.jpg": "/static/media/landon.0639968ac7abcfd3c9b2.jpg",
     "static/media/peg-at-woodland.webp": "/static/media/peg-at-woodland.75597ff78cce3de2dfc5.webp",
     "static/media/jm.jpg": "/static/media/jm.1cdd42fb50b3b14e075f.jpg",
@@ -14,12 +14,12 @@
     "static/media/WoodlandTheater_Logo_200px_height.webp": "/static/media/WoodlandTheater_Logo_200px_height.fceb0ada536ef2726685.webp",
     "static/media/instagram.svg": "/static/media/instagram.2964857818dad1b75fccf355259c5575.svg",
     "index.html": "/index.html",
-    "main.44623a6f.css.map": "/static/css/main.44623a6f.css.map",
-    "main.17a35cbb.js.map": "/static/js/main.17a35cbb.js.map",
-    "787.b97a9f3c.chunk.js.map": "/static/js/787.b97a9f3c.chunk.js.map"
+    "main.49fa193d.css.map": "/static/css/main.49fa193d.css.map",
+    "main.63661246.js.map": "/static/js/main.63661246.js.map",
+    "787.78bfc86e.chunk.js.map": "/static/js/787.78bfc86e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44623a6f.css",
-    "static/js/main.17a35cbb.js"
+    "static/css/main.49fa193d.css",
+    "static/js/main.63661246.js"
   ]
 }
