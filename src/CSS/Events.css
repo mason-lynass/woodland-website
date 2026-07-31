@@ -101,7 +101,7 @@
 
 
 .events-col-category {
-    text-align: right;
+    text-align: left;
     font-size: 0.9rem;
     color: rgb(100, 100, 100);
     flex-shrink: 0;
