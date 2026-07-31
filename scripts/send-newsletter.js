@@ -77,8 +77,8 @@ function buildEmail(shows) {
             const lineup = row['Show Title / Lineup'] || '';
             const performers = lineup ? lineup.split(',').map(p => p.trim()).filter(Boolean) : [];
             const ticketLink = row['Ticket Link'] || '';
-            const cost = row['Cost'] || '';
-            const time = row['Start Time'] || '';
+            const cost = row['Sugg. $'] || '';
+            const time = row['Time'] || '';
 
             const lineupHtml = title
                 ? `<strong>${title}</strong>${performers.length ? ' &mdash; ' + performers.join(', ') : ''}`
