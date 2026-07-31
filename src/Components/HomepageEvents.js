@@ -1,4 +1,4 @@
-import SheetEvent from './SheetEvent';
+import EventsTable from './EventsTable';
 import { Link } from 'react-router-dom';
 
 function HomepageEvents({ futureShows, sanityLoaded }) {
@@ -23,9 +23,7 @@ function HomepageEvents({ futureShows, sanityLoaded }) {
                     {futureShows.length > 0 && (
                         <>
                             <h4 id="homepage-events-title">Coming up:</h4>
-                            {futureShows.map((show) => (
-                                <SheetEvent key={show.id} show={show} />
-                            ))}
+                            <EventsTable shows={futureShows} defaultSort="date-asc" />
                         </>
                     )}
 

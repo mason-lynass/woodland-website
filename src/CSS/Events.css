@@ -41,14 +41,19 @@
 .events-table-header,
 .events-row {
     display: grid;
-    grid-template-columns: 150px 80px 70px 1fr 110px;
+    grid-template-columns: 150px 80px 70px 1fr 110px 56px;
     gap: 16px;
     align-items: start;
     padding: 10px 2vw;
     border-top: 1px solid #ccc;
     position: relative;
-    transition: background 0.12s;
+    transition: background 0.12s, box-shadow 0.6s ease-out;
     box-sizing: border-box;
+}
+
+.events-row--highlighted {
+    background: rgba(2, 167, 158, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(2, 167, 158, 0.4);
 }
 
 .events-table-header {
@@ -96,7 +101,7 @@
 
 
 .events-col-category {
-    text-align: right;
+    text-align: left;
     font-size: 0.9rem;
     color: rgb(100, 100, 100);
     flex-shrink: 0;
@@ -104,7 +109,7 @@
 
 .events-table--venue .events-table-header,
 .events-table--venue .events-row {
-    grid-template-columns: 150px 80px 70px 1fr 160px 110px;
+    grid-template-columns: 150px 80px 70px 1fr 160px 110px 56px;
 }
 
 .events-col-venue {
@@ -131,6 +136,40 @@
     font-size: 0.75rem;
     color: rgb(100, 100, 100);
     margin-top: 2px;
+}
+
+.events-col-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.events-action-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: none;
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+    transition: color 0.12s, background 0.12s;
+}
+
+.events-action-icon:hover {
+    color: rgb(2, 167, 158);
+    background: rgba(2, 167, 158, 0.1);
+}
+
+#events-subscribe-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: rgb(2, 167, 158);
 }
 
 .events-lineup-text {
@@ -174,7 +213,7 @@
 @media screen and (max-width: 1000px) {
     .events-table-header,
     .events-row {
-        grid-template-columns: 140px 1fr 70px;
+        grid-template-columns: 140px 1fr 56px;
         gap: 12px;
         padding: 10px 3vw;
     }
@@ -194,7 +233,7 @@
 
     .events-table--venue .events-table-header,
     .events-table--venue .events-row {
-        grid-template-columns: 140px 1fr 70px;
+        grid-template-columns: 140px 1fr 56px;
     }
 
     .events-section-header {
@@ -216,6 +255,8 @@
     }
 
     .events-col-category { display: block; text-align: left; }
+
+    .events-col-actions { display: none; }
 
     .events-section-header {
         padding: 0 4vw;
