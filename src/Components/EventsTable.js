@@ -15,13 +15,15 @@ function EventsTable({ shows, defaultSort = 'date-asc', showVenue = false }) {
         return '';
     }
 
+    function displayTitle(show) {
+        return show.show_title || show.performers.join(', ');
+    }
+
     const sorted = [...shows].sort((a, b) => {
         if (sort === 'date-asc') return Date.parse(a.date) - Date.parse(b.date);
         if (sort === 'date-desc') return Date.parse(b.date) - Date.parse(a.date);
-        if (sort === 'title-asc') return (a.show_title || '').localeCompare(b.show_title || '');
-        if (sort === 'title-desc') return (b.show_title || '').localeCompare(a.show_title || '');
-        if (sort === 'performers-asc') return (a.performers[0] || '').localeCompare(b.performers[0] || '');
-        if (sort === 'performers-desc') return (b.performers[0] || '').localeCompare(a.performers[0] || '');
+        if (sort === 'title-asc') return displayTitle(a).localeCompare(displayTitle(b));
+        if (sort === 'title-desc') return displayTitle(b).localeCompare(displayTitle(a));
         if (sort === 'categories-asc') return a.categories.localeCompare(b.categories);
         if (sort === 'categories-desc') return b.categories.localeCompare(a.categories);
         return 0;
