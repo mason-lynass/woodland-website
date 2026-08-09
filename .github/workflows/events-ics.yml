@@ -1,0 +1,44 @@
+name: Update Events Calendar Feed
+
+on:
+  schedule:
+    # Daily at 1pm UTC (~5-6am Pacific)
+    - cron: '0 13 * * *'
+  workflow_dispatch: # allow manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-ics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (has the generator script)
+        uses: actions/checkout@v4
+        with:
+          path: main
+
+      - name: Checkout gh-pages (where events.ics is published)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate events.ics
+        env:
+          GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
+        run: node main/scripts/generate-events-ics.js gh-pages/events.ics
+
+      - name: Commit and push if changed
+        working-directory: gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add events.ics
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "Update events.ics"
+          git push
