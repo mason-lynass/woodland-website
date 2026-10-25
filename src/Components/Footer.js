@@ -1,23 +1,27 @@
 import IG from "../Images/instagram.svg"
+import FourCulture from "../Images/4culture-logo-white.png"
 
 function Footer() {
     return (
         <div id="footer" className="blue">
-            <div>
-                <h2>Woodland Theater</h2>
-                <p>608 NW 65th St</p>
-                <p>Seattle, WA 98117</p>
+            <div id='footer-left'>
+                <div>
+                    <h2>Woodland Theater</h2>
+                    <p>608 NW 65th St</p>
+                    <p>Seattle, WA 98117</p>
+                </div>
+
+                <a id='IGFooter' href='https://www.instagram.com/woodlandtheater/' target='_blank' rel='noopener noreferrer'>
+                    <img src={IG} alt='link to Woodland Theater Instagram' />
+                </a>
             </div>
 
-            <a id='IGFooter' href='https://www.instagram.com/woodlandtheater/' target='_blank' rel='noopener noreferrer'>
-                <img src={IG} alt='link to Woodland Theater Instagram' />
-            </a>
-
-            {/* 4Culture logo hidden for now
-            <a href='https://www.4culture.org' target='_blank' rel='noopener noreferrer' id='4culture-footer'>
-                <img src={FourCulture} alt='4Culture' />
-            </a>
-            */}
+            <div id='fourculture-footer'>
+                <p>Supported by:</p>
+                <a href='https://www.4culture.org' target='_blank' rel='noopener noreferrer'>
+                    <img src={FourCulture} alt='4Culture' />
+                </a>
+            </div>
             {/* <div id='footer-flex'>
                 <p>608 NW 65th St - Seattle, WA 98117</p>
                 <p><a href='https://www.instagram.com/woodlandtheater/' target='_blank' rel="noopener noreferrer">@woodlandtheater</a> on Instagram</p>

@@ -195,8 +195,22 @@ main h2 {
   width: 50px;
 }
 
-#4culture-footer {
-  display: none;
+#footer-left {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+#fourculture-footer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+#fourculture-footer img {
+  display: block;
+  height: 100px;
+  width: 100px;
 }
 
 #footer-flex {
@@ -393,6 +407,10 @@ main h2 {
     padding: 4vw;
     flex-flow: column nowrap;
     align-items: flex-start;
+    gap: 16px;
+  }
+
+  #footer-left {
     gap: 16px;
   }
 
